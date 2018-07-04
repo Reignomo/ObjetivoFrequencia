@@ -178,38 +178,132 @@ namespace Pj_FrquenciaObjetivo
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < grid.RowCount; i++)
-            {
-                grid.Rows[i].DataGridView.Columns.Clear();
-            }
-            grid.DataSource = null;
-            grid.Refresh();
-            grid.Columns.Add("Status", "Status");
-            grid.Columns.Add("Dia", "Dia");
-            grid.Columns.Add("Mês", "Mês");
-            grid.Columns.Add("Ano", "Ano");
-            grid.Columns.Add("Hora", "Hora");
-            grid.Columns.Add("Minuto", "Minuto");
-            grid.Columns.Add("Segundo", "Segundo");
-            grid.Columns.Add("Matricula", "Matricula");
-            foreach (Apontamento Fap in Controller.L_execoes1)
-            {
-                try
+            if(tb_dia.Text !="" && cmb_ano.Text !="" && cmb_ano.Text != "")
+            { 
+                for (int i = 0; i < grid.RowCount; i++)
+                {
+                    grid.Rows[i].DataGridView.Columns.Clear();
+                }
+                grid.DataSource = null;
+                grid.Refresh();
+                grid.Columns.Add("Status", "Status");
+                grid.Columns.Add("Dia", "Dia");
+                grid.Columns.Add("Mês", "Mês");
+                grid.Columns.Add("Ano", "Ano");
+                grid.Columns.Add("Hora", "Hora");
+                grid.Columns.Add("Minuto", "Minuto");
+                grid.Columns.Add("Segundo", "Segundo");
+                grid.Columns.Add("Matricula", "Matricula");
+
+                string mes="";
+
+                switch (cmb_mes.Text)
+
                 {
 
-                    if (Fap.Dia == tb_dia.Text)
+                    case "Janeiro":  // Caso o que for digitado seja 1
+
+                        mes = "01";
+
+                        break; //E dps de escrever na tela o program irá parar e assim acontece nos outros
+
+                    case "Fevereiro":
+
+                        mes = "02";
+
+                        break;
+
+                    case "Março":
+
+                        mes = "03";
+
+                        break;
+
+                    case "Abril":
+
+                        mes = "04";
+
+                        break;
+
+                    case "Maio":
+
+                        mes = "05";
+
+                        break;
+
+                    case "Junho":
+
+                        mes = "06";
+
+                        break;
+
+                    case "Julho":
+
+                        mes = "07";
+
+                        break;
+
+                    case "Agosto":
+
+                        mes = "08";
+
+                        break;
+
+                    case "Setembro":
+
+                        mes = "09";
+
+                        break;
+
+                    case "Outubro":
+
+                        mes = "10";
+
+                        break;
+
+                    case "Novembro":
+
+                        mes = "11";
+
+                        break;
+
+                    case "Dezembro":
+
+                        mes = "12";
+
+                        break;
+
+               
+
+                
+
+                
+
+                }
+
+                foreach (Apontamento Fap in Controller.L_execoes1)
+                {
+                    try
                     {
 
-                        grid.Rows.Add(Fap.Status, Fap.Dia, Fap.Mes, Fap.Ano, Fap.Hora, Fap.Minuto,Fap.Segundo, Fap.Matricula_aluno);
+                        if (Fap.Dia == tb_dia.Text && Fap.Mes == mes && Fap.Ano == cmb_ano.Text)
+                        {
 
+                            grid.Rows.Add(Fap.Status, Fap.Dia, Fap.Mes, Fap.Ano, Fap.Hora, Fap.Minuto, Fap.Segundo, Fap.Matricula_aluno);
+
+                        }
+                    }
+
+                    catch (Exception)
+                    {
+                        MetroMessageBox.Show(this, "Falha ao tentar realizar o filtro, por favor tente novamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-
-                catch (Exception)
-                {
-                    MetroMessageBox.Show(this, "Falha ao tentar realizar o filtro, por favor tente novamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
+                
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Por favor, complete a data para realizar o filtro.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -246,6 +340,17 @@ namespace Pj_FrquenciaObjetivo
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < grid.RowCount; i++)
+            {
+                grid.Rows[i].DataGridView.Columns.Clear();
+            }
+            grid.DataSource = null;
+            grid.Refresh();
+            grid.DataSource = Controller.L_execoes1;
         }
     }
 }

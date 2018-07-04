@@ -41,7 +41,6 @@
             this.tb_qtex = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.btn_voltar = new MetroFramework.Controls.MetroButton();
             this.grid = new System.Windows.Forms.DataGridView();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -56,6 +55,7 @@
             this.cmb_mes = new System.Windows.Forms.ComboBox();
             this.cmb_ano = new System.Windows.Forms.ComboBox();
             this.tb_dia = new System.Windows.Forms.TextBox();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -288,21 +288,11 @@
             this.metroLabel3.TabIndex = 0;
             this.metroLabel3.Text = "Quantidade de exeções:";
             // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(372, 693);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(75, 23);
-            this.metroButton3.TabIndex = 2;
-            this.metroButton3.Text = "Sair";
-            this.metroButton3.UseSelectable = true;
-            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
-            // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(284, 693);
+            this.btn_voltar.Location = new System.Drawing.Point(350, 693);
             this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(82, 23);
+            this.btn_voltar.Size = new System.Drawing.Size(97, 23);
             this.btn_voltar.TabIndex = 4;
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseSelectable = true;
@@ -338,7 +328,7 @@
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(350, 664);
+            this.metroButton4.Location = new System.Drawing.Point(350, 662);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(97, 23);
             this.metroButton4.TabIndex = 12;
@@ -382,9 +372,10 @@
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.Location = new System.Drawing.Point(0, 2);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(109, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(33, 19);
             this.metroLabel8.TabIndex = 0;
-            this.metroLabel8.Text = "Mês: Exemplo 02";
+            this.metroLabel8.Text = "Mês";
+            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // metroTile3
             // 
@@ -452,11 +443,22 @@
             this.tb_dia.TabIndex = 21;
             this.tb_dia.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // metroButton5
+            // 
+            this.metroButton5.Location = new System.Drawing.Point(251, 693);
+            this.metroButton5.Name = "metroButton5";
+            this.metroButton5.Size = new System.Drawing.Size(92, 23);
+            this.metroButton5.TabIndex = 22;
+            this.metroButton5.Text = "Limpar filtro";
+            this.metroButton5.UseSelectable = true;
+            this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
+            // 
             // TratarDados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 722);
+            this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.tb_dia);
             this.Controls.Add(this.cmb_ano);
             this.Controls.Add(this.cmb_mes);
@@ -468,7 +470,6 @@
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.grid);
-            this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "TratarDados";
@@ -499,7 +500,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton btn_voltar;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
         private MetroFramework.Controls.MetroTextBox tb_qtex;
@@ -520,5 +520,6 @@
         private System.Windows.Forms.ComboBox cmb_mes;
         private System.Windows.Forms.ComboBox cmb_ano;
         private System.Windows.Forms.TextBox tb_dia;
+        private MetroFramework.Controls.MetroButton metroButton5;
     }
 }
