@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
 using System.IO; //declarando a biblioteca de entrada e saída de arquivos
-                 //a biblioteca IO
+using DGVPrinterHelper;
+//a biblioteca IO
 
 namespace Pj_FrquenciaObjetivo
 {
@@ -88,6 +89,14 @@ namespace Pj_FrquenciaObjetivo
                     {
                         Coutap++;
                     }
+                     if(status=="01")
+                            {
+                                status = "Entrada";
+                            }
+                            else
+                            {
+                                status = "Saida";
+                            }
                     TodosApontamento[int.Parse(mes), int.Parse(dia), Coutap] = linha;
                     Apontamento apm = new Apontamento(status, dia, mes, ano, hora, minuto, segundo, matricula);
                    
@@ -302,6 +311,8 @@ namespace Pj_FrquenciaObjetivo
             }
             else
             {
+               
+
                 MetroMessageBox.Show(this, "Por favor, complete a data para realizar o filtro.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
@@ -350,6 +361,22 @@ namespace Pj_FrquenciaObjetivo
             grid.DataSource = null;
             grid.Refresh();
             grid.DataSource = Controller.L_execoes1;
+        }
+
+        private void metroButton3_Click_1(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Apontamentos Objetivo Cubatão";
+            printer.SubTitle = string.Format("Data{0}", DateTime.Now);
+            printer.SubTitle = "- Exceções -";
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "Objetivo Cubatão";
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(grid);
         }
     }
 }

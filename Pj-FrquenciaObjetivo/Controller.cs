@@ -40,7 +40,7 @@ namespace Pj_FrquenciaObjetivo
 
 
 
-                    if (ap.Mes.Equals(ap2.Mes) && ap.Dia.Equals(ap2.Dia) && ap.Matricula_aluno.Equals(ap2.Matricula_aluno) && ap.Status == "01" && ap2.Status == "02")
+                    if (ap.Mes.Equals(ap2.Mes) && ap.Dia.Equals(ap2.Dia) && ap.Matricula_aluno.Equals(ap2.Matricula_aluno) && ap.Status == "Entrada" && ap2.Status == "Saida")
                     {
 
 
@@ -53,7 +53,7 @@ namespace Pj_FrquenciaObjetivo
 
                     }
 
-                    if (ap.Mes.Equals(ap2.Mes) && ap.Dia.Equals(ap2.Dia) && ap.Matricula_aluno.Equals(ap2.Matricula_aluno) && ap.Status == "02" && ap2.Status == "01")
+                    if (ap.Mes.Equals(ap2.Mes) && ap.Dia.Equals(ap2.Dia) && ap.Matricula_aluno.Equals(ap2.Matricula_aluno) && ap.Status == "Saida" && ap2.Status == "Entrada")
                     {
 
 
@@ -99,7 +99,7 @@ namespace Pj_FrquenciaObjetivo
 
                 foreach (Apontamento ap2 in L_apontamento1)
                 {
-                    if (ap.Status == "01")
+                    if (ap.Status == "Entrada")
                     {
 
                         entrada++;
@@ -123,7 +123,7 @@ namespace Pj_FrquenciaObjetivo
 
                 foreach (Apontamento ap2 in L_apontamento1)
                 {
-                    if (ap.Status == "02")
+                    if (ap.Status == "Saida")
                     {
 
                         saida++;
