@@ -2,6 +2,12 @@
 Sistema de frequência objetivo Cubatao
 Esse sistema está sendo desenvolvido para gerenciar o controle de frequencia de escolas.
 
+<img
+  src="/img/git.png"
+  width="70"
+  align="right"
+/>
+
 ## Funcionalidades
   *  Listar apontamento.
   *  Tratar exceções.
