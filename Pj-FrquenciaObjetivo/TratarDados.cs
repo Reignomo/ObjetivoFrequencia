@@ -303,7 +303,7 @@ namespace Pj_FrquenciaObjetivo
             }
             else
             {
-                MetroMessageBox.Show(this, "Por favor, complete a data para realizar o filtro.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MetroMessageBox.Show(this, "Por favor, complete a data para realizar o filtro.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
 
