@@ -378,5 +378,17 @@ namespace Pj_FrquenciaObjetivo
             printer.FooterSpacing = 15;
             printer.PrintDataGridView(grid);
         }
+
+        private void metroCheckBox1_Click(object sender, EventArgs e)
+        {
+            if(chekd_diretorio.Checked== true)
+            {
+                tb_caminho.Enabled = true;
+            }
+            else
+            {
+                tb_caminho.Enabled = false;
+            }
+        }
     }
 }

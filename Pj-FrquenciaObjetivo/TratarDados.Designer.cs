@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
+            this.chekd_diretorio = new MetroFramework.Controls.MetroCheckBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.tb_caminho = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -67,7 +67,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.metroCheckBox1);
+            this.groupBox1.Controls.Add(this.chekd_diretorio);
             this.groupBox1.Controls.Add(this.metroButton2);
             this.groupBox1.Controls.Add(this.tb_caminho);
             this.groupBox1.Controls.Add(this.metroLabel1);
@@ -78,15 +78,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Coletando dados";
             // 
-            // metroCheckBox1
+            // chekd_diretorio
             // 
-            this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.Location = new System.Drawing.Point(149, 73);
-            this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(106, 15);
-            this.metroCheckBox1.TabIndex = 4;
-            this.metroCheckBox1.Text = "Mudar diretório";
-            this.metroCheckBox1.UseSelectable = true;
+            this.chekd_diretorio.AutoSize = true;
+            this.chekd_diretorio.Location = new System.Drawing.Point(149, 73);
+            this.chekd_diretorio.Name = "chekd_diretorio";
+            this.chekd_diretorio.Size = new System.Drawing.Size(106, 15);
+            this.chekd_diretorio.TabIndex = 4;
+            this.chekd_diretorio.Text = "Mudar diretório";
+            this.chekd_diretorio.UseSelectable = true;
+            this.chekd_diretorio.Click += new System.EventHandler(this.metroCheckBox1_Click);
             // 
             // metroButton2
             // 
@@ -514,7 +515,7 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroButton btn_voltar;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
+        private MetroFramework.Controls.MetroCheckBox chekd_diretorio;
         private MetroFramework.Controls.MetroTextBox tb_qtex;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel2;
