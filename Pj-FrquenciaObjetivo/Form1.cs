@@ -26,9 +26,7 @@ namespace Pj_FrquenciaObjetivo
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        { }
 
         private void metroTextBox1_Click(object sender, EventArgs e)
         {

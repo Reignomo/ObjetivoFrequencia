@@ -34,28 +34,28 @@
             this.tb_caminho = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tb_qtEntrada = new MetroFramework.Controls.MetroTextBox();
+            this.tb_saida = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.tb_qtex = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.btn_voltar = new MetroFramework.Controls.MetroButton();
-            this.tb_qtex = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.tb_saida = new MetroFramework.Controls.MetroTextBox();
-            this.tb_qtEntrada = new MetroFramework.Controls.MetroTextBox();
             this.grid = new System.Windows.Forms.DataGridView();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.tb_FDia = new MetroFramework.Controls.MetroTextBox();
-            this.tb_FMes = new MetroFramework.Controls.MetroTextBox();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.Tb_FAnos = new MetroFramework.Controls.MetroTextBox();
+            this.cmb_mes = new System.Windows.Forms.ComboBox();
+            this.cmb_ano = new System.Windows.Forms.ComboBox();
+            this.tb_dia = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -157,6 +157,118 @@
             this.groupBox2.Text = "Exeções";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // tb_qtEntrada
+            // 
+            // 
+            // 
+            // 
+            this.tb_qtEntrada.CustomButton.Image = null;
+            this.tb_qtEntrada.CustomButton.Location = new System.Drawing.Point(9, 1);
+            this.tb_qtEntrada.CustomButton.Name = "";
+            this.tb_qtEntrada.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tb_qtEntrada.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tb_qtEntrada.CustomButton.TabIndex = 1;
+            this.tb_qtEntrada.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tb_qtEntrada.CustomButton.UseSelectable = true;
+            this.tb_qtEntrada.CustomButton.Visible = false;
+            this.tb_qtEntrada.Enabled = false;
+            this.tb_qtEntrada.Lines = new string[0];
+            this.tb_qtEntrada.Location = new System.Drawing.Point(214, 37);
+            this.tb_qtEntrada.MaxLength = 32767;
+            this.tb_qtEntrada.Name = "tb_qtEntrada";
+            this.tb_qtEntrada.PasswordChar = '\0';
+            this.tb_qtEntrada.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tb_qtEntrada.SelectedText = "";
+            this.tb_qtEntrada.SelectionLength = 0;
+            this.tb_qtEntrada.SelectionStart = 0;
+            this.tb_qtEntrada.ShortcutsEnabled = true;
+            this.tb_qtEntrada.Size = new System.Drawing.Size(31, 23);
+            this.tb_qtEntrada.TabIndex = 7;
+            this.tb_qtEntrada.UseSelectable = true;
+            this.tb_qtEntrada.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tb_qtEntrada.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // tb_saida
+            // 
+            // 
+            // 
+            // 
+            this.tb_saida.CustomButton.Image = null;
+            this.tb_saida.CustomButton.Location = new System.Drawing.Point(9, 1);
+            this.tb_saida.CustomButton.Name = "";
+            this.tb_saida.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tb_saida.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tb_saida.CustomButton.TabIndex = 1;
+            this.tb_saida.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tb_saida.CustomButton.UseSelectable = true;
+            this.tb_saida.CustomButton.Visible = false;
+            this.tb_saida.Enabled = false;
+            this.tb_saida.Lines = new string[0];
+            this.tb_saida.Location = new System.Drawing.Point(214, 66);
+            this.tb_saida.MaxLength = 32767;
+            this.tb_saida.Name = "tb_saida";
+            this.tb_saida.PasswordChar = '\0';
+            this.tb_saida.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tb_saida.SelectedText = "";
+            this.tb_saida.SelectionLength = 0;
+            this.tb_saida.SelectionStart = 0;
+            this.tb_saida.ShortcutsEnabled = true;
+            this.tb_saida.Size = new System.Drawing.Size(31, 23);
+            this.tb_saida.TabIndex = 6;
+            this.tb_saida.UseSelectable = true;
+            this.tb_saida.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tb_saida.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(58, 66);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(139, 19);
+            this.metroLabel4.TabIndex = 5;
+            this.metroLabel4.Text = "Quantidade de saidas:";
+            this.metroLabel4.Click += new System.EventHandler(this.metroLabel4_Click);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(58, 36);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(149, 19);
+            this.metroLabel2.TabIndex = 4;
+            this.metroLabel2.Text = "Quantidade de entrada:";
+            // 
+            // tb_qtex
+            // 
+            // 
+            // 
+            // 
+            this.tb_qtex.CustomButton.Image = null;
+            this.tb_qtex.CustomButton.Location = new System.Drawing.Point(9, 1);
+            this.tb_qtex.CustomButton.Name = "";
+            this.tb_qtex.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tb_qtex.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tb_qtex.CustomButton.TabIndex = 1;
+            this.tb_qtex.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tb_qtex.CustomButton.UseSelectable = true;
+            this.tb_qtex.CustomButton.Visible = false;
+            this.tb_qtex.Enabled = false;
+            this.tb_qtex.Lines = new string[0];
+            this.tb_qtex.Location = new System.Drawing.Point(214, 93);
+            this.tb_qtex.MaxLength = 32767;
+            this.tb_qtex.Name = "tb_qtex";
+            this.tb_qtex.PasswordChar = '\0';
+            this.tb_qtex.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tb_qtex.SelectedText = "";
+            this.tb_qtex.SelectionLength = 0;
+            this.tb_qtex.SelectionStart = 0;
+            this.tb_qtex.ShortcutsEnabled = true;
+            this.tb_qtex.Size = new System.Drawing.Size(31, 23);
+            this.tb_qtex.TabIndex = 3;
+            this.tb_qtex.UseSelectable = true;
+            this.tb_qtex.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tb_qtex.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // metroButton1
             // 
             this.metroButton1.Location = new System.Drawing.Point(85, 136);
@@ -196,118 +308,6 @@
             this.btn_voltar.UseSelectable = true;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
-            // tb_qtex
-            // 
-            // 
-            // 
-            // 
-            this.tb_qtex.CustomButton.Image = null;
-            this.tb_qtex.CustomButton.Location = new System.Drawing.Point(9, 1);
-            this.tb_qtex.CustomButton.Name = "";
-            this.tb_qtex.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.tb_qtex.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tb_qtex.CustomButton.TabIndex = 1;
-            this.tb_qtex.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tb_qtex.CustomButton.UseSelectable = true;
-            this.tb_qtex.CustomButton.Visible = false;
-            this.tb_qtex.Enabled = false;
-            this.tb_qtex.Lines = new string[0];
-            this.tb_qtex.Location = new System.Drawing.Point(214, 93);
-            this.tb_qtex.MaxLength = 32767;
-            this.tb_qtex.Name = "tb_qtex";
-            this.tb_qtex.PasswordChar = '\0';
-            this.tb_qtex.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tb_qtex.SelectedText = "";
-            this.tb_qtex.SelectionLength = 0;
-            this.tb_qtex.SelectionStart = 0;
-            this.tb_qtex.ShortcutsEnabled = true;
-            this.tb_qtex.Size = new System.Drawing.Size(31, 23);
-            this.tb_qtex.TabIndex = 3;
-            this.tb_qtex.UseSelectable = true;
-            this.tb_qtex.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tb_qtex.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(58, 36);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(149, 19);
-            this.metroLabel2.TabIndex = 4;
-            this.metroLabel2.Text = "Quantidade de entrada:";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(58, 66);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(139, 19);
-            this.metroLabel4.TabIndex = 5;
-            this.metroLabel4.Text = "Quantidade de saidas:";
-            this.metroLabel4.Click += new System.EventHandler(this.metroLabel4_Click);
-            // 
-            // tb_saida
-            // 
-            // 
-            // 
-            // 
-            this.tb_saida.CustomButton.Image = null;
-            this.tb_saida.CustomButton.Location = new System.Drawing.Point(9, 1);
-            this.tb_saida.CustomButton.Name = "";
-            this.tb_saida.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.tb_saida.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tb_saida.CustomButton.TabIndex = 1;
-            this.tb_saida.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tb_saida.CustomButton.UseSelectable = true;
-            this.tb_saida.CustomButton.Visible = false;
-            this.tb_saida.Enabled = false;
-            this.tb_saida.Lines = new string[0];
-            this.tb_saida.Location = new System.Drawing.Point(214, 66);
-            this.tb_saida.MaxLength = 32767;
-            this.tb_saida.Name = "tb_saida";
-            this.tb_saida.PasswordChar = '\0';
-            this.tb_saida.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tb_saida.SelectedText = "";
-            this.tb_saida.SelectionLength = 0;
-            this.tb_saida.SelectionStart = 0;
-            this.tb_saida.ShortcutsEnabled = true;
-            this.tb_saida.Size = new System.Drawing.Size(31, 23);
-            this.tb_saida.TabIndex = 6;
-            this.tb_saida.UseSelectable = true;
-            this.tb_saida.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tb_saida.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // tb_qtEntrada
-            // 
-            // 
-            // 
-            // 
-            this.tb_qtEntrada.CustomButton.Image = null;
-            this.tb_qtEntrada.CustomButton.Location = new System.Drawing.Point(9, 1);
-            this.tb_qtEntrada.CustomButton.Name = "";
-            this.tb_qtEntrada.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.tb_qtEntrada.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tb_qtEntrada.CustomButton.TabIndex = 1;
-            this.tb_qtEntrada.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tb_qtEntrada.CustomButton.UseSelectable = true;
-            this.tb_qtEntrada.CustomButton.Visible = false;
-            this.tb_qtEntrada.Enabled = false;
-            this.tb_qtEntrada.Lines = new string[0];
-            this.tb_qtEntrada.Location = new System.Drawing.Point(214, 37);
-            this.tb_qtEntrada.MaxLength = 32767;
-            this.tb_qtEntrada.Name = "tb_qtEntrada";
-            this.tb_qtEntrada.PasswordChar = '\0';
-            this.tb_qtEntrada.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tb_qtEntrada.SelectedText = "";
-            this.tb_qtEntrada.SelectionLength = 0;
-            this.tb_qtEntrada.SelectionStart = 0;
-            this.tb_qtEntrada.ShortcutsEnabled = true;
-            this.tb_qtEntrada.Size = new System.Drawing.Size(31, 23);
-            this.tb_qtEntrada.TabIndex = 7;
-            this.tb_qtEntrada.UseSelectable = true;
-            this.tb_qtEntrada.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tb_qtEntrada.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // grid
             // 
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -346,68 +346,6 @@
             this.metroButton4.UseSelectable = true;
             this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
-            // tb_FDia
-            // 
-            // 
-            // 
-            // 
-            this.tb_FDia.CustomButton.Image = null;
-            this.tb_FDia.CustomButton.Location = new System.Drawing.Point(86, 1);
-            this.tb_FDia.CustomButton.Name = "";
-            this.tb_FDia.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.tb_FDia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tb_FDia.CustomButton.TabIndex = 1;
-            this.tb_FDia.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tb_FDia.CustomButton.UseSelectable = true;
-            this.tb_FDia.CustomButton.Visible = false;
-            this.tb_FDia.Lines = new string[0];
-            this.tb_FDia.Location = new System.Drawing.Point(51, 664);
-            this.tb_FDia.MaxLength = 32767;
-            this.tb_FDia.Name = "tb_FDia";
-            this.tb_FDia.PasswordChar = '\0';
-            this.tb_FDia.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tb_FDia.SelectedText = "";
-            this.tb_FDia.SelectionLength = 0;
-            this.tb_FDia.SelectionStart = 0;
-            this.tb_FDia.ShortcutsEnabled = true;
-            this.tb_FDia.Size = new System.Drawing.Size(108, 23);
-            this.tb_FDia.TabIndex = 13;
-            this.tb_FDia.UseSelectable = true;
-            this.tb_FDia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tb_FDia.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_FDia.Click += new System.EventHandler(this.tb_Fdia_Click);
-            // 
-            // tb_FMes
-            // 
-            // 
-            // 
-            // 
-            this.tb_FMes.CustomButton.Image = null;
-            this.tb_FMes.CustomButton.Location = new System.Drawing.Point(91, 1);
-            this.tb_FMes.CustomButton.Name = "";
-            this.tb_FMes.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.tb_FMes.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tb_FMes.CustomButton.TabIndex = 1;
-            this.tb_FMes.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tb_FMes.CustomButton.UseSelectable = true;
-            this.tb_FMes.CustomButton.Visible = false;
-            this.tb_FMes.Lines = new string[0];
-            this.tb_FMes.Location = new System.Drawing.Point(165, 664);
-            this.tb_FMes.MaxLength = 32767;
-            this.tb_FMes.Name = "tb_FMes";
-            this.tb_FMes.PasswordChar = '\0';
-            this.tb_FMes.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tb_FMes.SelectedText = "";
-            this.tb_FMes.SelectionLength = 0;
-            this.tb_FMes.SelectionStart = 0;
-            this.tb_FMes.ShortcutsEnabled = true;
-            this.tb_FMes.Size = new System.Drawing.Size(113, 23);
-            this.tb_FMes.TabIndex = 14;
-            this.tb_FMes.UseSelectable = true;
-            this.tb_FMes.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tb_FMes.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_FMes.Click += new System.EventHandler(this.metroTextBox2_Click);
-            // 
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
@@ -418,6 +356,15 @@
             this.metroTile1.TabIndex = 16;
             this.metroTile1.Text = "dwd";
             this.metroTile1.UseSelectable = true;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(3, 2);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(104, 19);
+            this.metroLabel7.TabIndex = 0;
+            this.metroLabel7.Text = "Dia: Exemplo 01";
             // 
             // metroTile2
             // 
@@ -430,6 +377,15 @@
             this.metroTile2.Text = "metroTile2";
             this.metroTile2.UseSelectable = true;
             // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(0, 2);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(109, 19);
+            this.metroLabel8.TabIndex = 0;
+            this.metroLabel8.Text = "Mês: Exemplo 02";
+            // 
             // metroTile3
             // 
             this.metroTile3.ActiveControl = null;
@@ -441,24 +397,6 @@
             this.metroTile3.Text = "Anos";
             this.metroTile3.UseSelectable = true;
             // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(3, 2);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(104, 19);
-            this.metroLabel7.TabIndex = 0;
-            this.metroLabel7.Text = "Dia: Exemplo 01";
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(0, 2);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(109, 19);
-            this.metroLabel8.TabIndex = 0;
-            this.metroLabel8.Text = "Mês: Exemplo 02";
-            // 
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
@@ -469,47 +407,62 @@
             this.metroLabel9.Text = "Ano";
             this.metroLabel9.Click += new System.EventHandler(this.metroLabel9_Click);
             // 
-            // Tb_FAnos
+            // cmb_mes
             // 
+            this.cmb_mes.FormattingEnabled = true;
+            this.cmb_mes.Items.AddRange(new object[] {
+            "Janeiro",
+            "Fevereiro",
+            "Março",
+            "Abril",
+            "Maio",
+            "Junho",
+            "Julho",
+            "Agosto",
+            "Setembro",
+            "Outubro",
+            "Novembro",
+            "Dezembro "});
+            this.cmb_mes.Location = new System.Drawing.Point(165, 664);
+            this.cmb_mes.Name = "cmb_mes";
+            this.cmb_mes.Size = new System.Drawing.Size(113, 21);
+            this.cmb_mes.TabIndex = 19;
             // 
+            // cmb_ano
             // 
+            this.cmb_ano.FormattingEnabled = true;
+            this.cmb_ano.Items.AddRange(new object[] {
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022"});
+            this.cmb_ano.Location = new System.Drawing.Point(284, 664);
+            this.cmb_ano.Name = "cmb_ano";
+            this.cmb_ano.Size = new System.Drawing.Size(60, 21);
+            this.cmb_ano.TabIndex = 20;
             // 
-            this.Tb_FAnos.CustomButton.Image = null;
-            this.Tb_FAnos.CustomButton.Location = new System.Drawing.Point(38, 1);
-            this.Tb_FAnos.CustomButton.Name = "";
-            this.Tb_FAnos.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.Tb_FAnos.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Tb_FAnos.CustomButton.TabIndex = 1;
-            this.Tb_FAnos.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Tb_FAnos.CustomButton.UseSelectable = true;
-            this.Tb_FAnos.CustomButton.Visible = false;
-            this.Tb_FAnos.Lines = new string[0];
-            this.Tb_FAnos.Location = new System.Drawing.Point(284, 664);
-            this.Tb_FAnos.MaxLength = 32767;
-            this.Tb_FAnos.Name = "Tb_FAnos";
-            this.Tb_FAnos.PasswordChar = '\0';
-            this.Tb_FAnos.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Tb_FAnos.SelectedText = "";
-            this.Tb_FAnos.SelectionLength = 0;
-            this.Tb_FAnos.SelectionStart = 0;
-            this.Tb_FAnos.ShortcutsEnabled = true;
-            this.Tb_FAnos.Size = new System.Drawing.Size(60, 23);
-            this.Tb_FAnos.TabIndex = 19;
-            this.Tb_FAnos.UseSelectable = true;
-            this.Tb_FAnos.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.Tb_FAnos.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // tb_dia
+            // 
+            this.tb_dia.Location = new System.Drawing.Point(51, 664);
+            this.tb_dia.Name = "tb_dia";
+            this.tb_dia.Size = new System.Drawing.Size(108, 20);
+            this.tb_dia.TabIndex = 21;
+            this.tb_dia.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // TratarDados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 722);
-            this.Controls.Add(this.Tb_FAnos);
+            this.Controls.Add(this.tb_dia);
+            this.Controls.Add(this.cmb_ano);
+            this.Controls.Add(this.cmb_mes);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
-            this.Controls.Add(this.tb_FMes);
-            this.Controls.Add(this.tb_FDia);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel5);
@@ -558,14 +511,14 @@
         private System.Windows.Forms.DataGridView grid;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroButton metroButton4;
-        private MetroFramework.Controls.MetroTextBox tb_FDia;
-        private MetroFramework.Controls.MetroTextBox tb_FMes;
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroTextBox Tb_FAnos;
+        private System.Windows.Forms.ComboBox cmb_mes;
+        private System.Windows.Forms.ComboBox cmb_ano;
+        private System.Windows.Forms.TextBox tb_dia;
     }
 }

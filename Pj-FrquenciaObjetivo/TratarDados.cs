@@ -178,23 +178,38 @@ namespace Pj_FrquenciaObjetivo
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < grid.RowCount; i++)
+            {
+                grid.Rows[i].DataGridView.Columns.Clear();
+            }
             grid.DataSource = null;
+            grid.Refresh();
             grid.Columns.Add("Status", "Status");
             grid.Columns.Add("Dia", "Dia");
             grid.Columns.Add("Mês", "Mês");
             grid.Columns.Add("Ano", "Ano");
             grid.Columns.Add("Hora", "Hora");
             grid.Columns.Add("Minuto", "Minuto");
+            grid.Columns.Add("Segundo", "Segundo");
             grid.Columns.Add("Matricula", "Matricula");
             foreach (Apontamento Fap in Controller.L_execoes1)
             {
-
-                if (Fap.Dia == tb_FDia.Text)
+                try
                 {
-                   
-                    grid.Rows.Add(Fap.Status,Fap.Dia,Fap.Mes,Fap.Ano,Fap.Hora,Fap.Minuto,Fap.Matricula_aluno);
 
+                    if (Fap.Dia == tb_dia.Text)
+                    {
+
+                        grid.Rows.Add(Fap.Status, Fap.Dia, Fap.Mes, Fap.Ano, Fap.Hora, Fap.Minuto, Fap.Matricula_aluno);
+
+                    }
                 }
+
+                catch (Exception)
+                {
+                    MetroMessageBox.Show(this, "Falha ao tentar realizar o filtro, por favor tente novamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
         }
 
@@ -214,6 +229,21 @@ namespace Pj_FrquenciaObjetivo
         }
 
         private void tb_Fdia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
