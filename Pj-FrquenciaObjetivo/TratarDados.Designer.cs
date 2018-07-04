@@ -182,7 +182,7 @@
             this.tb_qtEntrada.SelectionLength = 0;
             this.tb_qtEntrada.SelectionStart = 0;
             this.tb_qtEntrada.ShortcutsEnabled = true;
-            this.tb_qtEntrada.Size = new System.Drawing.Size(31, 23);
+            this.tb_qtEntrada.Size = new System.Drawing.Size(52, 23);
             this.tb_qtEntrada.TabIndex = 7;
             this.tb_qtEntrada.UseSelectable = true;
             this.tb_qtEntrada.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -213,7 +213,7 @@
             this.tb_saida.SelectionLength = 0;
             this.tb_saida.SelectionStart = 0;
             this.tb_saida.ShortcutsEnabled = true;
-            this.tb_saida.Size = new System.Drawing.Size(31, 23);
+            this.tb_saida.Size = new System.Drawing.Size(52, 23);
             this.tb_saida.TabIndex = 6;
             this.tb_saida.UseSelectable = true;
             this.tb_saida.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -263,7 +263,7 @@
             this.tb_qtex.SelectionLength = 0;
             this.tb_qtex.SelectionStart = 0;
             this.tb_qtex.ShortcutsEnabled = true;
-            this.tb_qtex.Size = new System.Drawing.Size(31, 23);
+            this.tb_qtex.Size = new System.Drawing.Size(52, 23);
             this.tb_qtex.TabIndex = 3;
             this.tb_qtex.UseSelectable = true;
             this.tb_qtex.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));

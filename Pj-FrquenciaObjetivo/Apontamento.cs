@@ -25,7 +25,7 @@ namespace Pj_FrquenciaObjetivo
             this.ano = a;
             this.hora = h;
             this.minuto = min;
-            this.segundo = seg;
+            this.Segundo = seg;
             this.matricula_aluno = matri;
 
         }
@@ -36,7 +36,8 @@ namespace Pj_FrquenciaObjetivo
         public string Ano { get => ano; set => ano = value; }
         public string Hora { get => hora; set => hora = value; }
         public string Minuto { get => minuto; set => minuto = value; }
+        public string Segundo { get => segundo; set => segundo = value; }
         public string Matricula_aluno { get => matricula_aluno; set => matricula_aluno = value; }
-
+        
     }
 }

@@ -200,7 +200,7 @@ namespace Pj_FrquenciaObjetivo
                     if (Fap.Dia == tb_dia.Text)
                     {
 
-                        grid.Rows.Add(Fap.Status, Fap.Dia, Fap.Mes, Fap.Ano, Fap.Hora, Fap.Minuto, Fap.Matricula_aluno);
+                        grid.Rows.Add(Fap.Status, Fap.Dia, Fap.Mes, Fap.Ano, Fap.Hora, Fap.Minuto,Fap.Segundo, Fap.Matricula_aluno);
 
                     }
                 }
