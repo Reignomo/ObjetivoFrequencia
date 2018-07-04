@@ -99,6 +99,7 @@
             this.metroButton2.TabIndex = 5;
             this.metroButton2.Text = "Salvar alterações";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // richTextBox1
             // 

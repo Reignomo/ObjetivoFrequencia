@@ -7,6 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
+using System.IO; //declarando a biblioteca de entrada e saída de arquivos
+                 //a biblioteca IO
+
+
 
 namespace Pj_FrquenciaObjetivo
 {
@@ -19,7 +25,7 @@ namespace Pj_FrquenciaObjetivo
 
         private void registros_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -32,6 +38,12 @@ namespace Pj_FrquenciaObjetivo
             Home Hhome = new Home();
             this.Hide(); // use dessa maneira.
             Hhome.ShowDialog();
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+           
+
         }
     }
 }
