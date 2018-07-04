@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Apontamento.cs" />
     <Compile Include="Controller.cs" />
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

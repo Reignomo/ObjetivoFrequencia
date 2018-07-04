@@ -474,6 +474,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "TratarDados";
             this.Text = "Tratar apontamentos";
+            this.TransparencyKey = System.Drawing.Color.PowderBlue;
             this.Load += new System.EventHandler(this.TratarDados_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

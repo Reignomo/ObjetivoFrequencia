@@ -136,8 +136,7 @@ namespace Pj_FrquenciaObjetivo
             tb_qtex.Text =Convert.ToString(Controller.L_execoes1.Count());
             tb_qtEntrada.Text = Convert.ToString(Controller.GetQtEntrada());
             tb_saida.Text = Convert.ToString(Controller.GetqtSaida());
-            MessageBox.Show("Apontamento criado com seucesso");
-            MessageBox.Show("A quantidade de apontamentos é :" + Controller.L_apontamento1.Count()+"Qt exeções:"+Controller.L_execoes1.Count());
+          
             
         }
 
