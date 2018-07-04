@@ -3,7 +3,7 @@ Sistema de frequência objetivo Cubatao
 Esse sistema está sendo desenvolvido para gerenciar o controle de frequencia de escolas.
 
 <img
-  src="/logo.png"
+  src="/logo.jpg"
   width="70"
   align="right"
 />
