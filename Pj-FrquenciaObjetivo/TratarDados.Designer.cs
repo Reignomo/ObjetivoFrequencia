@@ -57,6 +57,8 @@
             this.tb_dia = new System.Windows.Forms.TextBox();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.pgb_coleta = new System.Windows.Forms.ProgressBar();
+            this.lb_carregando = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -67,13 +69,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lb_carregando);
+            this.groupBox1.Controls.Add(this.pgb_coleta);
             this.groupBox1.Controls.Add(this.chekd_diretorio);
             this.groupBox1.Controls.Add(this.metroButton2);
             this.groupBox1.Controls.Add(this.tb_caminho);
             this.groupBox1.Controls.Add(this.metroLabel1);
             this.groupBox1.Location = new System.Drawing.Point(89, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(296, 149);
+            this.groupBox1.Size = new System.Drawing.Size(296, 162);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Coletando dados";
@@ -93,7 +97,7 @@
             // 
             this.metroButton2.Location = new System.Drawing.Point(173, 94);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(82, 23);
+            this.metroButton2.Size = new System.Drawing.Size(82, 22);
             this.metroButton2.TabIndex = 3;
             this.metroButton2.Text = "Coletar";
             this.metroButton2.UseSelectable = true;
@@ -465,6 +469,25 @@
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click_1);
             // 
+            // pgb_coleta
+            // 
+            this.pgb_coleta.Location = new System.Drawing.Point(76, 135);
+            this.pgb_coleta.Name = "pgb_coleta";
+            this.pgb_coleta.Size = new System.Drawing.Size(157, 12);
+            this.pgb_coleta.TabIndex = 5;
+            this.pgb_coleta.Visible = false;
+            this.pgb_coleta.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
+            // lb_carregando
+            // 
+            this.lb_carregando.AutoSize = true;
+            this.lb_carregando.Location = new System.Drawing.Point(118, 119);
+            this.lb_carregando.Name = "lb_carregando";
+            this.lb_carregando.Size = new System.Drawing.Size(71, 13);
+            this.lb_carregando.TabIndex = 6;
+            this.lb_carregando.Text = "Carregando...";
+            this.lb_carregando.Visible = false;
+            // 
             // TratarDados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,5 +559,7 @@
         private System.Windows.Forms.TextBox tb_dia;
         private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroButton metroButton3;
+        private System.Windows.Forms.ProgressBar pgb_coleta;
+        private System.Windows.Forms.Label lb_carregando;
     }
 }

@@ -13,6 +13,7 @@ using System.IO; //declarando a biblioteca de entrada e saída de arquivos
 using DGVPrinterHelper;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading;
 //a biblioteca IO
 
 namespace Pj_FrquenciaObjetivo
@@ -140,18 +141,62 @@ namespace Pj_FrquenciaObjetivo
             Hhome.ShowDialog();
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private Task ProcessData(List<string> list, IProgress<progressReport> progress)
         {
+            int index = 1;
+            int totalProgress = list.Count;
+            var progressReport = new progressReport();
+            return Task.Run(() =>
+            {
+                for (int i = 0; i < totalProgress; i++)
+                {
+                    progressReport.Percentual1 = index++ * 100 / totalProgress;
+                    progress.Report(progressReport);
+                    Thread.Sleep(2);
+                    
+                   
 
+                }
+               
+                
+
+            });
+
+        }
+
+        private async void metroButton2_Click(object sender, EventArgs e)
+        {
+            pgb_coleta.Visible = true;
+            lb_carregando.Visible = true;
+            List<string> list = new List<string>();
+            for (int i = 0; i < 1000; i++)
+                list.Add(i.ToString());
+
+            var progress = new Progress<progressReport>();
+            progress.ProgressChanged += (o, report) =>
+                {
+                    lb_carregando.Text = string.Format("Carregando...{0}%", report.Percentual1);
+                    pgb_coleta.Value = report.Percentual1;
+                    pgb_coleta.Update();
+
+                    
+
+                };
            
-            
-            
             grid.DataSource = Controller.L_execoes1;
-            tb_qtex.Text =Convert.ToString(Controller.L_execoes1.Count());
+        
+            await ProcessData(list, progress);
+            
+
+            pgb_coleta.Visible = false;
+            lb_carregando.Visible = false;
+            tb_qtex.Text = Convert.ToString(Controller.L_execoes1.Count());
             tb_qtEntrada.Text = Convert.ToString(Controller.GetQtEntrada());
             tb_saida.Text = Convert.ToString(Controller.GetqtSaida());
-          
-            
+
+
+
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -410,6 +455,11 @@ namespace Pj_FrquenciaObjetivo
             {
                 tb_caminho.Enabled = false;
             }
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
