@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Pj_FrquenciaObjetivo
 {
@@ -10,10 +12,25 @@ namespace Pj_FrquenciaObjetivo
     {
         private static List<Apontamento> L_apontamento = new List<Apontamento>();
         private static List<Apontamento> L_execoes = new List<Apontamento>();
-
+        private static Thread Thread;
 
         internal static List<Apontamento> L_apontamento1 { get => L_apontamento; set => L_apontamento = value; }
         internal static List<Apontamento> L_execoes1 { get => L_execoes; set => L_execoes = value; }
+        public static Thread Thread1 { get => Thread; set => Thread = value; }
+
+
+        public static void Splash()
+        {
+            SplashScreen.SplashForm frm = new SplashScreen.SplashForm();
+            frm.AppName = "Por favor aguarde";
+            Application.Run(frm);
+
+        }
+
+        public static void CriaLoad()
+        {
+            Thread = new Thread(new ThreadStart(Splash));
+        }
 
         public static void CarregaApontamentos(Apontamento Aponta)
         {

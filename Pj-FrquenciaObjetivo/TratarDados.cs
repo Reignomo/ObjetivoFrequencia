@@ -26,6 +26,7 @@ namespace Pj_FrquenciaObjetivo
 
         private void TratarDados_Load(object sender, EventArgs e)
         {
+           
             try
             {
                 int qtMaxima = 0;
@@ -125,6 +126,8 @@ namespace Pj_FrquenciaObjetivo
 
                 MetroMessageBox.Show(this, "Erro ao tentar adicionar na lista.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            Controller.Thread1.Abort();
+            
 
         }
 
