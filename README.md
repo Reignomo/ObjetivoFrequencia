@@ -1,7 +1,7 @@
 
 # Objetivo Frequência
-Sistema de frequência objetivo Cubatao
-Esse sistema está sendo desenvolvido para gerenciar o controle de frequencia de escolas.
+Sistema de frequência objetivo Cubatao,
+esse sistema está sendo desenvolvido para gerenciar o controle de frequencia de escolas.
 
 ## Funcionalidades
   *  Listar apontamento.
