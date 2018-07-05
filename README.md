@@ -17,7 +17,7 @@ esse sistema está sendo desenvolvido para gerenciar o controle de frequencia de
   
 ## Denvolvedor
   Evandro Ignacio
-  Estudante - IFS Cubatão 
+  Estudante - IFSP Cubatão 
   
   <img
   src="/logo.jpg"
