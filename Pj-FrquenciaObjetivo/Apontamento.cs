@@ -16,8 +16,9 @@ namespace Pj_FrquenciaObjetivo
         private string minuto;
         private string segundo;
         private string matricula_aluno;
+        private string tipo;
 
-        public Apontamento(string s, string d, string m,string a,string h,string min,string seg,string matri)
+        public Apontamento(string s, string d, string m,string a,string h,string min,string seg,string matri, string tipo)
         {
             this.status = s;
             this.dia = d;
@@ -27,6 +28,7 @@ namespace Pj_FrquenciaObjetivo
             this.minuto = min;
             this.Segundo = seg;
             this.matricula_aluno = matri;
+            this.tipo = tipo;
 
         }
 
@@ -38,6 +40,6 @@ namespace Pj_FrquenciaObjetivo
         public string Minuto { get => minuto; set => minuto = value; }
         public string Segundo { get => segundo; set => segundo = value; }
         public string Matricula_aluno { get => matricula_aluno; set => matricula_aluno = value; }
-        
+        public string Tipo { get => tipo; set => tipo = value; }
     }
 }

@@ -11,6 +11,8 @@ using MetroFramework;
 using MetroFramework.Forms;
 using System.IO; //declarando a biblioteca de entrada e saída de arquivos
 using DGVPrinterHelper;
+using System.Data;
+using System.Data.SqlClient;
 //a biblioteca IO
 
 namespace Pj_FrquenciaObjetivo
@@ -98,7 +100,7 @@ namespace Pj_FrquenciaObjetivo
                                 status = "Saida";
                             }
                     TodosApontamento[int.Parse(mes), int.Parse(dia), Coutap] = linha;
-                    Apontamento apm = new Apontamento(status, dia, mes, ano, hora, minuto, segundo, matricula);
+                    Apontamento apm = new Apontamento(status, dia, mes, ano, hora, minuto, segundo, matricula, "Apontamento");
                    
                         Controller.CarregaApontamentos(apm);
                        
@@ -161,7 +163,23 @@ namespace Pj_FrquenciaObjetivo
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string connString = @"server = .\sqlexpress; integrated security = true;";
+            SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tabela", conexao); /*cmd possui mais de um parâmetro, neste caso coloquei o comando SQL "SELECT * FROM tabela" que irá selecionar tudo(*) de tabela, o segundo parâmetro indica onde o banco está conectado,ou seja se estamos selecionando informações do banco precisamos dizer onde ele está localizado */
 
+            
+                conexao.Open(); // abre a conexão com o banco   
+                cmd.ExecuteNonQuery(); // executa cmd
+            }                  /*Pronto após o cmd.ExecuteNonQuery(); selecionamos tudo o que tinha dentro do banco, agora os passos seguintes irão exibir as informações para que o usuário possa vê-las    */
+           
+            catch(Exception)
+            {
+                MetroMessageBox.Show(this, "Falha ao tentar efetuar a conexão com o banco de dados, por favor entre em contato com o administrador.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+                                                 
+       
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)

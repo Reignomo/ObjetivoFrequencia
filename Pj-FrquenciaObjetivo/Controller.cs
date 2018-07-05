@@ -67,7 +67,7 @@ namespace Pj_FrquenciaObjetivo
                     }
                     else if (achou==false && total==contador)
                     {
-                       
+                        ap.Tipo = "Exceção";
                         L_execoes.Add(ap);
                         L_execoes.Count();
                         achou = false;
