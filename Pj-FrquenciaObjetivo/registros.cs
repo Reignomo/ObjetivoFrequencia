@@ -25,7 +25,8 @@ namespace Pj_FrquenciaObjetivo
 
         private void registros_Load(object sender, EventArgs e)
         {
-           
+            
+            
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

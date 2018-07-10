@@ -169,7 +169,7 @@ namespace Pj_FrquenciaObjetivo
             pgb_coleta.Visible = true;
             lb_carregando.Visible = true;
             List<string> list = new List<string>();
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 80; i++)
                 list.Add(i.ToString());
 
             var progress = new Progress<progressReport>();
@@ -211,20 +211,15 @@ namespace Pj_FrquenciaObjetivo
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            int qt = 0;
             try
             {
-                string connString = @"server = .\sqlexpress; integrated security = true;";
-            SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
-            SqlCommand cmd = new SqlCommand("SELECT * FROM tabela", conexao); /*cmd possui mais de um parâmetro, neste caso coloquei o comando SQL "SELECT * FROM tabela" que irá selecionar tudo(*) de tabela, o segundo parâmetro indica onde o banco está conectado,ou seja se estamos selecionando informações do banco precisamos dizer onde ele está localizado */
-
-            
-                conexao.Open(); // abre a conexão com o banco   
-                cmd.ExecuteNonQuery(); // executa cmd
-            }                  /*Pronto após o cmd.ExecuteNonQuery(); selecionamos tudo o que tinha dentro do banco, agora os passos seguintes irão exibir as informações para que o usuário possa vê-las    */
-           
-            catch(Exception)
+                qt = Controller.SetDadosBanco();
+                MessageBox.Show("Tratamento de exceções efetuado com sucesso ! \n Quantidade de alunos novos adicionados: "+Convert.ToString(qt));
+            }
+            catch
             {
-                MetroMessageBox.Show(this, "Falha ao tentar efetuar a conexão com o banco de dados, por favor entre em contato com o administrador.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+             MetroMessageBox.Show(this, "Falha ao tentar efetuar a conexão com o banco de dados, por favor entre em contato com o administrador.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
                                                  
        
@@ -420,6 +415,8 @@ namespace Pj_FrquenciaObjetivo
 
         private void metroButton5_Click(object sender, EventArgs e)
         {
+            tb_dia.Text = "";
+            
             for (int i = 0; i < grid.RowCount; i++)
             {
                 grid.Rows[i].DataGridView.Columns.Clear();

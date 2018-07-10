@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Pj_FrquenciaObjetivo
 {
@@ -42,10 +44,10 @@ namespace Pj_FrquenciaObjetivo
 
         public static int TrataEx()
         {
-          
-            bool achou =false;
-            int contador=0;
-            int total = Controller.L_apontamento1.Count()-1;
+
+            bool achou = false;
+            int contador = 0;
+            int total = Controller.L_apontamento1.Count() - 1;
 
             foreach (Apontamento ap in L_apontamento1)
             {
@@ -61,8 +63,8 @@ namespace Pj_FrquenciaObjetivo
                     {
 
 
-                       
-                        achou=true;
+
+                        achou = true;
                         contador = 0;
                         break;
 
@@ -82,7 +84,7 @@ namespace Pj_FrquenciaObjetivo
 
 
                     }
-                    else if (achou==false && total==contador)
+                    else if (achou == false && total == contador)
                     {
                         ap.Tipo = "Exceção";
                         L_execoes.Add(ap);
@@ -152,9 +154,67 @@ namespace Pj_FrquenciaObjetivo
             }
             return saida;
 
+
+
         }
 
-       
+        public static int SetDadosBanco()
+        {
+            int  qtNovos=0, linhas=0;
+            string connString = "Server=USUARIO-PC\\SQLEXPRESS; Database=objetivo; Integrated Security=True;";
+            SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
+            conexao.Open(); // abre a conexão com o banco  
+            try
+            {
+                
+                foreach (Apontamento ap in L_apontamento1)
+                {
+                    SqlCommand select = new SqlCommand("SELECT Matricula From Alunos Where Matricula='"+ap.Matricula_aluno+"'",conexao);
+
+
+
+                    SqlDataReader resultado = select.ExecuteReader();
+                   
+
+                    while (resultado.Read())
+                    {
+                        linhas++;
+                    }
+                    resultado.Close();
+
+                    if (linhas==0)
+                    {
+                        qtNovos++;
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Alunos values ( '" + ap.Matricula_aluno + "','')", conexao); /*cmd possui mais de um parâmetro, neste caso coloquei o comando SQL "SELECT * FROM tabela" que irá selecionar tudo(*) de tabela, o segundo parâmetro indica onde o banco está conectado,ou seja se estamos selecionando informações do banco precisamos dizer onde ele está localizado */
+                        cmd.ExecuteNonQuery(); // executa cmd
+                    }
+                    linhas = 0;
+
+
+
+                   
+                }
+
+               
+                return qtNovos;
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show("erro"+e);
+                return qtNovos;
+            }
+             finally
+            {
+                conexao.Close();
+            }
+
+
+        }                  /*Pronto após o cmd.ExecuteNonQuery(); selecionamos tudo o que tinha dentro do banco, agora os passos seguintes irão exibir as informações para que o usuário possa vê-las    */
+
+    
+
+
 
 
 

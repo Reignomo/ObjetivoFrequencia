@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridAlunosNovos = new System.Windows.Forms.DataGridView();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
@@ -40,7 +40,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btn_voltar = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAlunosNovos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,17 +51,17 @@
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(262, 36);
             this.metroTile1.TabIndex = 0;
-            this.metroTile1.Text = "Registros novos";
+            this.metroTile1.Text = "Alunos novos";
             this.metroTile1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.metroTile1.UseSelectable = true;
             // 
-            // dataGridView1
+            // gridAlunosNovos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 107);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(262, 156);
-            this.dataGridView1.TabIndex = 1;
+            this.gridAlunosNovos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridAlunosNovos.Location = new System.Drawing.Point(23, 107);
+            this.gridAlunosNovos.Name = "gridAlunosNovos";
+            this.gridAlunosNovos.Size = new System.Drawing.Size(262, 156);
+            this.gridAlunosNovos.TabIndex = 1;
             // 
             // metroButton1
             // 
@@ -168,12 +168,12 @@
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridAlunosNovos);
             this.Controls.Add(this.metroTile1);
             this.Name = "registros";
             this.Text = "Registros";
             this.Load += new System.EventHandler(this.registros_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAlunosNovos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -183,7 +183,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroTile metroTile1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridAlunosNovos;
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private MetroFramework.Controls.MetroTile metroTile2;
