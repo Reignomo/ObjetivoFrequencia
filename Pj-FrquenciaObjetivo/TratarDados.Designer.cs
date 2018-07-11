@@ -94,9 +94,9 @@
             // 
             // pgb_coleta
             // 
-            this.pgb_coleta.Location = new System.Drawing.Point(100, 135);
+            this.pgb_coleta.Location = new System.Drawing.Point(85, 135);
             this.pgb_coleta.Name = "pgb_coleta";
-            this.pgb_coleta.Size = new System.Drawing.Size(109, 12);
+            this.pgb_coleta.Size = new System.Drawing.Size(120, 12);
             this.pgb_coleta.TabIndex = 5;
             this.pgb_coleta.Visible = false;
             this.pgb_coleta.Click += new System.EventHandler(this.progressBar1_Click);

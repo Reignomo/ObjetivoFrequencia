@@ -121,10 +121,10 @@ namespace Pj_FrquenciaObjetivo
                 }
             }
 
-            catch (Exception)
+            catch (Exception er)
             {
 
-
+                MessageBox.Show("erro :"+ er);
                 MetroMessageBox.Show(this, "Erro ao tentar adicionar na lista.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             Controller.Thread1.Abort();
@@ -169,8 +169,10 @@ namespace Pj_FrquenciaObjetivo
             pgb_coleta.Visible = true;
             lb_carregando.Visible = true;
             List<string> list = new List<string>();
-            for (int i = 0; i < 80; i++)
+            for (int i = 0; i < 1000; i++)
+            {
                 list.Add(i.ToString());
+            }
 
             var progress = new Progress<progressReport>();
             progress.ProgressChanged += (o, report) =>

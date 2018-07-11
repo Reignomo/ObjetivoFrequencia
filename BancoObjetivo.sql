@@ -1,4 +1,5 @@
-
+drop database objetivo
+create database objetivo;
 use objetivo;
 
 create table Alunos(
@@ -18,3 +19,16 @@ minuto varchar(2) not null,
 segundo varchar(2) not null,
 tipo varchar(12) not null
 );
+
+INSERT INTO Alunos (Matricula,Nome_aluno)
+VALUES ('000123','');
+
+
+INSERT INTO Alunos values ('000321','');
+select * from Alunos;
+
+INSERT INTO Alunos values ( 'ap.Mr','')
+
+
+SELECT Matricula From Alunos Where Matricula = '00099'
+

@@ -45,8 +45,9 @@ namespace Pj_FrquenciaObjetivo
         public static int TrataEx()
         {
 
+            string[] remove = new string[L_apontamento1.Count()];
             bool achou = false;
-            int contador = 0;
+            int contador = 0, rmoveCont=0;
             int total = Controller.L_apontamento1.Count() - 1;
 
             foreach (Apontamento ap in L_apontamento1)
@@ -86,22 +87,33 @@ namespace Pj_FrquenciaObjetivo
                     }
                     else if (achou == false && total == contador)
                     {
-                        ap.Tipo = "Exceção";
-                        L_execoes.Add(ap);
+                        ap.Tipo = "Exceção";                      
+                        L_execoes.Add(ap);                  
                         L_execoes.Count();
                         achou = false;
                         contador = 0;
+                        remove[rmoveCont] = ap.Matricula_aluno;
+                        rmoveCont++;
                         break;
                     }
                     contador++;
 
 
+                    
 
 
+                    }             
                 }
+            // removendo as exceções dos apotamentos
+
+            for (int i = 0; i <= rmoveCont; i++)
+            {
+
+                L_apontamento1.Remove(L_apontamento1[i]);
 
 
             }
+            L_apontamento1.Count();
             return L_execoes.Count();
         }
 
@@ -166,7 +178,7 @@ namespace Pj_FrquenciaObjetivo
             conexao.Open(); // abre a conexão com o banco  
             try
             {
-                
+                // adicionando alunos
                 foreach (Apontamento ap in L_apontamento1)
                 {
                     SqlCommand select = new SqlCommand("SELECT Matricula From Alunos Where Matricula='"+ap.Matricula_aluno+"'",conexao);
@@ -194,8 +206,16 @@ namespace Pj_FrquenciaObjetivo
 
                    
                 }
+                // Adicionando apontamentos 
+                foreach(Apontamento aponta in L_apontamento1)
+                {
 
-               
+                    SqlCommand verificaAp = "";
+
+                }
+
+
+
                 return qtNovos;
             }
 
