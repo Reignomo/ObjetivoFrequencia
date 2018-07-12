@@ -26,7 +26,34 @@ namespace Pj_FrquenciaObjetivo
         private void registros_Load(object sender, EventArgs e)
         {
             Controller.GetAlunos();
-            gridAlunosNovos.DataSource = Controller.L_alunos1;
+            for (int i = 0; i < gridAlunosNovos.RowCount; i++)
+            {
+               gridAlunosNovos.Rows[i].DataGridView.Columns.Clear();
+            }
+            gridAlunosNovos.DataSource = null;
+            gridAlunosNovos.Refresh();
+            gridAlunosNovos.Columns.Add("Matricula", "Matricula");
+            gridAlunosNovos.Columns.Add("Nome", "Nome");
+
+            foreach (Aluno al in Controller.L_alunos1)
+            {
+                try
+                {
+
+                    if (al.Nome1=="")
+                    {
+
+                        gridAlunosNovos.Rows.Add(al.Matricula1,al.Nome1);
+
+                    }
+                }
+
+                catch (Exception)
+                {
+                    MetroMessageBox.Show(this, "Falha ao tentar realizar o filtro, por favor tente novamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+          
             
         }
 
@@ -44,8 +71,31 @@ namespace Pj_FrquenciaObjetivo
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-           
+            // Salvando dados alterados no grid
+            foreach (Aluno al in Controller.L_alunos1)
+            {
+                try
+                {
+                    int qtd = gridAlunosNovos.RowCount-1, cont=0;
 
+                    if (cont<=qtd)
+                    {
+
+                        al.Nome1 = gridAlunosNovos.Rows[cont].Cells["Nome"].Value.ToString();
+                        MessageBox.Show(al.Nome1);
+                        cont++;
+                        
+                    }
+                   
+                }
+
+                catch (Exception)
+                {
+                    MetroMessageBox.Show(this, "Falha ao tentar realizar o filtro, por favor tente novamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                MessageBox.Show("Nome alterados com sucesso ");
+
+            }
         }
     }
 }
