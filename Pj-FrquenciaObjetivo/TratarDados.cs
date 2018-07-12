@@ -11,7 +11,6 @@ using MetroFramework;
 using MetroFramework.Forms;
 using System.IO; //declarando a biblioteca de entrada e saída de arquivos
 using DGVPrinterHelper;
-using System.Data;
 using System.Data.SqlClient;
 using System.Threading;
 //a biblioteca IO
@@ -213,6 +212,8 @@ namespace Pj_FrquenciaObjetivo
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+           
+            lb_aguarde.Visible = true;
             int qt = 0;
             try
             {
@@ -222,6 +223,10 @@ namespace Pj_FrquenciaObjetivo
             catch
             {
              MetroMessageBox.Show(this, "Falha ao tentar efetuar a conexão com o banco de dados, por favor entre em contato com o administrador.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                lb_aguarde.Visible = false;
             }
                                                  
        

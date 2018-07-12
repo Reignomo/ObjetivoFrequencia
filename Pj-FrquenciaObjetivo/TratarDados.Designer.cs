@@ -59,6 +59,7 @@
             this.tb_dia = new System.Windows.Forms.TextBox();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.lb_aguarde = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -75,9 +76,9 @@
             this.groupBox1.Controls.Add(this.metroButton2);
             this.groupBox1.Controls.Add(this.tb_caminho);
             this.groupBox1.Controls.Add(this.metroLabel1);
-            this.groupBox1.Location = new System.Drawing.Point(89, 73);
+            this.groupBox1.Location = new System.Drawing.Point(81, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(296, 162);
+            this.groupBox1.Size = new System.Drawing.Size(313, 162);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Coletando dados";
@@ -167,6 +168,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lb_aguarde);
             this.groupBox2.Controls.Add(this.tb_qtEntrada);
             this.groupBox2.Controls.Add(this.tb_saida);
             this.groupBox2.Controls.Add(this.metroLabel4);
@@ -174,9 +176,9 @@
             this.groupBox2.Controls.Add(this.tb_qtex);
             this.groupBox2.Controls.Add(this.metroButton1);
             this.groupBox2.Controls.Add(this.metroLabel3);
-            this.groupBox2.Location = new System.Drawing.Point(89, 241);
+            this.groupBox2.Location = new System.Drawing.Point(81, 241);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(296, 181);
+            this.groupBox2.Size = new System.Drawing.Size(313, 181);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Exeções";
@@ -296,7 +298,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(85, 136);
+            this.metroButton1.Location = new System.Drawing.Point(84, 139);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(134, 23);
             this.metroButton1.TabIndex = 2;
@@ -488,6 +490,16 @@
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click_1);
             // 
+            // lb_aguarde
+            // 
+            this.lb_aguarde.AutoSize = true;
+            this.lb_aguarde.Location = new System.Drawing.Point(5, 165);
+            this.lb_aguarde.Name = "lb_aguarde";
+            this.lb_aguarde.Size = new System.Drawing.Size(303, 13);
+            this.lb_aguarde.TabIndex = 8;
+            this.lb_aguarde.Text = "Por favor aguarde essa operação pode levar alguns minutos ...";
+            this.lb_aguarde.Visible = false;
+            // 
             // TratarDados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,5 +573,6 @@
         private MetroFramework.Controls.MetroButton metroButton3;
         private System.Windows.Forms.ProgressBar pgb_coleta;
         private System.Windows.Forms.Label lb_carregando;
+        private System.Windows.Forms.Label lb_aguarde;
     }
 }

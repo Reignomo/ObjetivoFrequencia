@@ -45,9 +45,9 @@ namespace Pj_FrquenciaObjetivo
         public static int TrataEx()
         {
 
-            string[] remove = new string[L_apontamento1.Count()];
+           
             bool achou = false;
-            int contador = 0, rmoveCont=0;
+            int contador = 0;
             int total = Controller.L_apontamento1.Count() - 1;
 
             foreach (Apontamento ap in L_apontamento1)
@@ -92,8 +92,7 @@ namespace Pj_FrquenciaObjetivo
                         L_execoes.Count();
                         achou = false;
                         contador = 0;
-                        remove[rmoveCont] = ap.Matricula_aluno;
-                        rmoveCont++;
+                       
                         break;
                     }
                     contador++;
@@ -106,14 +105,7 @@ namespace Pj_FrquenciaObjetivo
                 }
             // removendo as exceções dos apotamentos
 
-            for (int i = 0; i <= rmoveCont; i++)
-            {
 
-                L_apontamento1.Remove(L_apontamento1[i]);
-
-
-            }
-            L_apontamento1.Count();
             return L_execoes.Count();
         }
 
@@ -207,17 +199,39 @@ namespace Pj_FrquenciaObjetivo
                    
                 }
                 // Adicionando apontamentos 
+                int linhasR=0;
                 foreach(Apontamento aponta in L_apontamento1)
                 {
 
-                    SqlCommand verificaAp = "";
+                    SqlCommand verificaS = new SqlCommand("SELECT * FROM  Apontamento Where PK_Matricula='" + aponta.Matricula_aluno + "' AND  status_apontamento='" +
+                        aponta.Status+"' AND  dia='"+aponta.Dia+"' AND  mes='"+aponta.Mes+"' AND  ano='"+aponta.Ano+"' AND  hora='"
+                        +aponta.Hora+"' AND minuto='"+aponta.Minuto+"' AND  segundo='"+aponta.Segundo+"' AND  tipo='"+aponta.Tipo+"'", conexao);
+
+
+
+
+                    SqlDataReader verifica = verificaS.ExecuteReader();
+                    while (verifica.Read())
+                    {
+                        linhasR++;
+                    }
+                    verifica.Close();
+
+                    if (linhasR == 0)
+                    {
+                      SqlCommand cmd = new SqlCommand("INSERT INTO Apontamento values ( '" + aponta.Matricula_aluno + "','"+aponta.Status+"','"+aponta.Dia+"','"+aponta.Mes+"','"+aponta.Ano+"','"+aponta.Hora+"','"+aponta.Minuto+"','"+aponta.Segundo+"','"+aponta.Tipo+"')", conexao); /*cmd possui mais de um parâmetro, neste caso coloquei o comando SQL "SELECT * FROM tabela" que irá selecionar tudo(*) de tabela, o segundo parâmetro indica onde o banco está conectado,ou seja se estamos selecionando informações do banco precisamos dizer onde ele está localizado */
+                      cmd.ExecuteNonQuery(); // executa cmd
+
+                    }
+                    linhasR = 0;
 
                 }
 
 
-
+                L_apontamento.Count();
                 return qtNovos;
             }
+            
 
             catch (Exception e)
             {
@@ -228,6 +242,7 @@ namespace Pj_FrquenciaObjetivo
             {
                 conexao.Close();
             }
+           
 
 
         }                  /*Pronto após o cmd.ExecuteNonQuery(); selecionamos tudo o que tinha dentro do banco, agora os passos seguintes irão exibir as informações para que o usuário possa vê-las    */
