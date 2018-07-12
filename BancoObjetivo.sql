@@ -33,3 +33,5 @@ INSERT INTO Alunos values ( 'ap.Mr','')
 SELECT Matricula From Alunos Where Matricula = '00099'
 SELECT * from Apontamento 
 
+Select * from alunos
+
