@@ -15,11 +15,12 @@ namespace Pj_FrquenciaObjetivo
         private static List<Apontamento> L_apontamento = new List<Apontamento>();
         private static List<Apontamento> L_execoes = new List<Apontamento>();
         private static Thread Thread;
+        private static List<Aluno> L_alunos = new List<Aluno>();
 
         internal static List<Apontamento> L_apontamento1 { get => L_apontamento; set => L_apontamento = value; }
         internal static List<Apontamento> L_execoes1 { get => L_execoes; set => L_execoes = value; }
         public static Thread Thread1 { get => Thread; set => Thread = value; }
-
+        public static List<Aluno> L_alunos1 { get => L_alunos; set => L_alunos = value; }
 
         public static void Splash()
         {
@@ -41,6 +42,8 @@ namespace Pj_FrquenciaObjetivo
 
 
         }
+
+        
 
         public static int TrataEx()
         {
@@ -247,6 +250,46 @@ namespace Pj_FrquenciaObjetivo
 
         }                  /*Pronto após o cmd.ExecuteNonQuery(); selecionamos tudo o que tinha dentro do banco, agora os passos seguintes irão exibir as informações para que o usuário possa vê-las    */
 
+        public static void GetAlunos()
+        {
+            string connString = "Server=USUARIO-PC\\SQLEXPRESS; Database=objetivo; Integrated Security=True;";
+            SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
+            conexao.Open();
+            try
+            {
+                
+
+                SqlCommand query = new SqlCommand("Select * from alunos");
+                query.Connection = conexao;
+
+                using (SqlDataReader reader = query.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Aluno Al = new Aluno(reader.GetString(0), reader.GetString(1));
+                            L_alunos.Add(Al);
+                        }
+                    }
+                }
+                //Intermediario recebe a respota do comandos sql enviado  
+
+
+
+
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show("Erro ao tentar carregador os dados or favor contate o administrador"+e);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+        }
     
 
 

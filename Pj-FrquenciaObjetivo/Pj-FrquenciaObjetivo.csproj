@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alunos.cs" />
     <Compile Include="Apontamento.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="DGVPrinter.cs" />

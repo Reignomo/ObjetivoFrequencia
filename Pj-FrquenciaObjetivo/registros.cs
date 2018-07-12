@@ -25,7 +25,8 @@ namespace Pj_FrquenciaObjetivo
 
         private void registros_Load(object sender, EventArgs e)
         {
-            
+            Controller.GetAlunos();
+            gridAlunosNovos.DataSource = Controller.L_alunos1;
             
         }
 
