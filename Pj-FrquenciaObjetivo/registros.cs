@@ -41,7 +41,7 @@ namespace Pj_FrquenciaObjetivo
                 try
                 {
 
-                    if (al.Nome1=="")
+                    if (al.Nome1=="" && al.Status1=="ATIVO")
                     {
 
                        gridAlunosNovos.Rows.Add(al.Matricula1,al.Nome1);
@@ -112,7 +112,19 @@ namespace Pj_FrquenciaObjetivo
 
         private void gridAlunosNovos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string exMatri = gridAlunosNovos.Rows[e.RowIndex].Cells["Matricula"].Value.ToString();
+            Controller.ExcAluno1 = gridAlunosNovos.Rows[e.RowIndex].Cells["Matricula"].Value.ToString();
+           
+         
+         
+
+
+
+        }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            Controller.ExcluiAluno(Controller.ExcAluno1);
+          
         }
     }
 }

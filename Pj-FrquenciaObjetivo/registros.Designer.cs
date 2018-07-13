@@ -163,6 +163,7 @@
             this.metroButton5.TabIndex = 14;
             this.metroButton5.Text = "Excluir";
             this.metroButton5.UseSelectable = true;
+            this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
             // registros
             // 

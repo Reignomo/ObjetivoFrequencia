@@ -16,11 +16,13 @@ namespace Pj_FrquenciaObjetivo
         private static List<Apontamento> L_execoes = new List<Apontamento>();
         private static Thread Thread;
         private static List<Aluno> L_alunos = new List<Aluno>();
+        private static string ExcAluno;
 
         internal static List<Apontamento> L_apontamento1 { get => L_apontamento; set => L_apontamento = value; }
         internal static List<Apontamento> L_execoes1 { get => L_execoes; set => L_execoes = value; }
         public static Thread Thread1 { get => Thread; set => Thread = value; }
         public static List<Aluno> L_alunos1 { get => L_alunos; set => L_alunos = value; }
+        public static string ExcAluno1 { get => ExcAluno; set => ExcAluno = value; }
 
         public static void Splash()
         {
@@ -258,9 +260,9 @@ namespace Pj_FrquenciaObjetivo
             try
             {
 
-                int qtM = L_alunos.Count() - 1, conta = 0;
+               
 
-                SqlCommand query = new SqlCommand("Select * from alunos");
+                SqlCommand query = new SqlCommand("Select * from Alunos");
                 query.Connection = conexao;
 
                 using (SqlDataReader reader = query.ExecuteReader())
@@ -332,7 +334,7 @@ namespace Pj_FrquenciaObjetivo
 
             try
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Status =INATIVO WHERE Matricula='" +matricula + "'", conexao);
+                SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Status='INATIVO' WHERE Matricula='" +matricula + "'", conexao);
 
                 cmd.ExecuteNonQuery();
             }
