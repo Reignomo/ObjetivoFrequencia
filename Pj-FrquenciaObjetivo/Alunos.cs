@@ -10,14 +10,17 @@ namespace Pj_FrquenciaObjetivo
     {
         private string Matricula;
         private string Nome;
+        private string Status;
 
         public string Matricula1 { get => Matricula; set => Matricula = value; }
         public string Nome1 { get => Nome; set => Nome = value; }
+        public string Status1 { get => Status; set => Status = value; }
 
         public Aluno(string matricula,string nome)
         {
             this.Matricula = matricula;
             this.Nome = nome;
+            this.Status = "ATIVO";
         }
     }
 }

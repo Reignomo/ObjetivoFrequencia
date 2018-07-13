@@ -25,7 +25,7 @@ namespace Pj_FrquenciaObjetivo
 
         private void registros_Load(object sender, EventArgs e)
         {
-            Controller.GetAlunos();
+            
             for (int i = 0; i < gridAlunosNovos.RowCount; i++)
             {
                gridAlunosNovos.Rows[i].DataGridView.Columns.Clear();
@@ -34,6 +34,7 @@ namespace Pj_FrquenciaObjetivo
             gridAlunosNovos.Refresh();
             gridAlunosNovos.Columns.Add("Matricula", "Matricula");
             gridAlunosNovos.Columns.Add("Nome", "Nome");
+            Controller.GetAlunos();
 
             foreach (Aluno al in Controller.L_alunos1)
             {
@@ -43,7 +44,7 @@ namespace Pj_FrquenciaObjetivo
                     if (al.Nome1=="")
                     {
 
-                        gridAlunosNovos.Rows.Add(al.Matricula1,al.Nome1);
+                       gridAlunosNovos.Rows.Add(al.Matricula1,al.Nome1);
 
                     }
                 }
@@ -71,7 +72,8 @@ namespace Pj_FrquenciaObjetivo
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            int qtd = gridAlunosNovos.RowCount - 1, cont = 0;
+            
+            int qtd = Controller.L_alunos1.Count() - 1, cont = 0;
             try
           {
                 // Salvando dados alterados no grid
@@ -83,9 +85,12 @@ namespace Pj_FrquenciaObjetivo
                     if (cont<=qtd)
                      {
 
-                        al.Nome1 = gridAlunosNovos.Rows[cont].Cells["Nome"].Value.ToString();
+                        if (al.Matricula1.Equals(gridAlunosNovos.Rows[cont].Cells["Matricula"].Value.ToString()))
+                        {
+                            al.Nome1 = gridAlunosNovos.Rows[cont].Cells["Nome"].Value.ToString();
+                            cont++;
+                        }
                         
-                        cont++;
                         
                      }
                    
@@ -95,18 +100,19 @@ namespace Pj_FrquenciaObjetivo
 
             }
 
-         catch (Exception)
+         catch (Exception er)
           {
-             MetroMessageBox.Show(this, "Falha ao tentar realizar o filtro, por favor tente novamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("erro"+er);
           }
-            
+            gridAlunosNovos.Refresh();
 
-           
+
+
         }
 
         private void gridAlunosNovos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int exMatri = int.Parse(gridAlunosNovos.Rows[e.RowIndex].Cells["Matricula"].Value.ToString());
+            string exMatri = gridAlunosNovos.Rows[e.RowIndex].Cells["Matricula"].Value.ToString();
         }
     }
 }

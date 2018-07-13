@@ -192,7 +192,7 @@ namespace Pj_FrquenciaObjetivo
                     if (linhas==0)
                     {
                         qtNovos++;
-                        SqlCommand cmd = new SqlCommand("INSERT INTO Alunos values ( '" + ap.Matricula_aluno + "','')", conexao); /*cmd possui mais de um parâmetro, neste caso coloquei o comando SQL "SELECT * FROM tabela" que irá selecionar tudo(*) de tabela, o segundo parâmetro indica onde o banco está conectado,ou seja se estamos selecionando informações do banco precisamos dizer onde ele está localizado */
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Alunos values ( '" + ap.Matricula_aluno + "','','ATIVO')", conexao); /*cmd possui mais de um parâmetro, neste caso coloquei o comando SQL "SELECT * FROM tabela" que irá selecionar tudo(*) de tabela, o segundo parâmetro indica onde o banco está conectado,ou seja se estamos selecionando informações do banco precisamos dizer onde ele está localizado */
                         cmd.ExecuteNonQuery(); // executa cmd
                     }
                     linhas = 0;
@@ -257,32 +257,34 @@ namespace Pj_FrquenciaObjetivo
             conexao.Open();
             try
             {
-                
+
+                int qtM = L_alunos.Count() - 1, conta = 0;
 
                 SqlCommand query = new SqlCommand("Select * from alunos");
                 query.Connection = conexao;
 
                 using (SqlDataReader reader = query.ExecuteReader())
                 {
-                    if (reader.HasRows)
+
+                    if (L_alunos.Count() == 0)
                     {
-                        while (reader.Read())
+                        if (reader.HasRows)
                         {
-                            Aluno Al = new Aluno(reader.GetString(0), reader.GetString(1));
-                            L_alunos.Add(Al);
+                            while (reader.Read())
+                            {
+                                Aluno Al = new Aluno(reader.GetString(0), reader.GetString(1));
+                                L_alunos.Add(Al);
+                            }
                         }
                     }
                 }
-                //Intermediario recebe a respota do comandos sql enviado  
-
-
-
-
             }
+
+
 
             catch (Exception e)
             {
-                MessageBox.Show("Erro ao tentar carregador os dados or favor contate o administrador"+e);
+                MessageBox.Show("Erro ao tentar carregador os dados or favor contate o administrador" + e);
             }
             finally
             {
@@ -320,6 +322,32 @@ namespace Pj_FrquenciaObjetivo
                     conexao.Close();
                 }
             
+        }
+
+        public static void ExcluiAluno(string matricula)
+        {
+            string connString = "Server=USUARIO-PC\\SQLEXPRESS; Database=objetivo; Integrated Security=True;";
+            SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
+            conexao.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Status =INATIVO WHERE Matricula='" +matricula + "'", conexao);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
+
+                MessageBox.Show("Erro ao tentar excluir aluno, por favor contate o administrador"+e);
+            }
+            
+            finally
+            {
+                conexao.Close();
+            }
+
+
         }
     
 
