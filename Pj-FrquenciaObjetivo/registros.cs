@@ -34,6 +34,7 @@ namespace Pj_FrquenciaObjetivo
             gridAlunosNovos.Refresh();
             gridAlunosNovos.Columns.Add("Matricula", "Matricula");
             gridAlunosNovos.Columns.Add("Nome", "Nome");
+            gridAlunosNovos.Columns.Add("Status", "Status");
             Controller.GetAlunos();
 
             foreach (Aluno al in Controller.L_alunos1)
@@ -44,7 +45,9 @@ namespace Pj_FrquenciaObjetivo
                     if (al.Nome1=="" && al.Status1=="ATIVO")
                     {
 
-                       gridAlunosNovos.Rows.Add(al.Matricula1,al.Nome1);
+                       gridAlunosNovos.Rows.Add(al.Matricula1,al.Nome1,al.Status1
+                           
+                           );
 
                     }
                 }
