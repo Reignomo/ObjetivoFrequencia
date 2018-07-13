@@ -91,7 +91,7 @@ namespace Pj_FrquenciaObjetivo
                    
                 }
                 MessageBox.Show("Nome alterados com sucesso ");
-
+                Controller.AlteraNomes();
 
             }
 
@@ -101,10 +101,12 @@ namespace Pj_FrquenciaObjetivo
           }
             
 
-            foreach (Aluno al2 in Controller.L_alunos1)
-            {
-                MessageBox.Show("Nome: " + al2.Nome1);
-            }
+           
+        }
+
+        private void gridAlunosNovos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int exMatri = int.Parse(gridAlunosNovos.Rows[e.RowIndex].Cells["Matricula"].Value.ToString());
         }
     }
 }

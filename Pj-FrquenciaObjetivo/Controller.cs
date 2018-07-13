@@ -290,6 +290,37 @@ namespace Pj_FrquenciaObjetivo
             }
 
         }
+
+        public static void AlteraNomes()
+        {
+
+            string connString = "Server=USUARIO-PC\\SQLEXPRESS; Database=objetivo; Integrated Security=True;";
+            SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
+            conexao.Open();
+            
+
+                try
+                {
+                    foreach (Aluno al in L_alunos1)
+                    {
+                        SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Nome_aluno ='" + al.Nome1 + "' WHERE Matricula='" + al.Matricula1 + "'", conexao);
+
+                        cmd.ExecuteNonQuery(); // executa cmd
+                    }
+                }
+
+                catch(Exception e )
+                {
+                    MessageBox.Show("Erro ao tentar aterar dados dos alunos, por favor contate ao adiministrador :"+e);
+
+                }
+
+                finally
+                {
+                    conexao.Close();
+                }
+            
+        }
     
 
 

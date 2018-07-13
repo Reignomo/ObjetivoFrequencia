@@ -40,6 +40,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btn_voltar = new MetroFramework.Controls.MetroButton();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunosNovos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +63,7 @@
             this.gridAlunosNovos.Name = "gridAlunosNovos";
             this.gridAlunosNovos.Size = new System.Drawing.Size(262, 156);
             this.gridAlunosNovos.TabIndex = 1;
+            this.gridAlunosNovos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAlunosNovos_CellClick);
             // 
             // metroButton1
             // 
@@ -93,9 +95,9 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(356, 240);
+            this.metroButton2.Location = new System.Drawing.Point(372, 240);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(113, 23);
+            this.metroButton2.Size = new System.Drawing.Size(97, 23);
             this.metroButton2.TabIndex = 5;
             this.metroButton2.Text = "Salvar alterações";
             this.metroButton2.UseSelectable = true;
@@ -153,11 +155,21 @@
             this.btn_voltar.UseSelectable = true;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
+            // metroButton5
+            // 
+            this.metroButton5.Location = new System.Drawing.Point(291, 240);
+            this.metroButton5.Name = "metroButton5";
+            this.metroButton5.Size = new System.Drawing.Size(75, 23);
+            this.metroButton5.TabIndex = 14;
+            this.metroButton5.Text = "Excluir";
+            this.metroButton5.UseSelectable = true;
+            // 
             // registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 486);
+            this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.dateTimePicker1);
@@ -194,5 +206,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btn_voltar;
+        private MetroFramework.Controls.MetroButton metroButton5;
     }
 }
