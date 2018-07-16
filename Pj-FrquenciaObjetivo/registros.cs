@@ -35,6 +35,8 @@ namespace Pj_FrquenciaObjetivo
             gridAlunosNovos.Columns.Add("Matricula", "Matricula");
             gridAlunosNovos.Columns.Add("Nome", "Nome");
             gridAlunosNovos.Columns.Add("Status", "Status");
+
+           
             Controller.GetAlunos();
 
             foreach (Aluno al in Controller.L_alunos1)
@@ -107,7 +109,11 @@ namespace Pj_FrquenciaObjetivo
           {
                 MessageBox.Show("erro"+er);
           }
-            gridAlunosNovos.Refresh();
+           gridAlunosNovos.Refresh();
+
+
+
+
 
 
 
@@ -126,8 +132,49 @@ namespace Pj_FrquenciaObjetivo
 
         private void metroButton5_Click(object sender, EventArgs e)
         {
-            Controller.ExcluiAluno(Controller.ExcAluno1);
-          
+            try
+            {
+                Controller.ExcluiAluno(Controller.ExcAluno1);
+                MessageBox.Show("Aluno Excluid com sucesso !");
+
+                for (int i = 0; i < gridAlunosNovos.RowCount; i++)
+                {
+                    gridAlunosNovos.Rows[i].DataGridView.Columns.Clear();
+                }
+                gridAlunosNovos.DataSource = null;
+                gridAlunosNovos.Refresh();
+                gridAlunosNovos.Columns.Add("Matricula", "Matricula");
+                gridAlunosNovos.Columns.Add("Nome", "Nome");
+                gridAlunosNovos.Columns.Add("Status", "Status");
+                Controller.GetAlunos();
+
+                foreach (Aluno al in Controller.L_alunos1)
+                {
+                    try
+                    {
+
+                        if (al.Nome1 == "" && al.Status1 == "ATIVO")
+                        {
+
+                            gridAlunosNovos.Rows.Add(al.Matricula1, al.Nome1, al.Status1
+
+                                );
+
+                        }
+                    }
+
+                    catch (Exception)
+                    {
+                        MetroMessageBox.Show(this, "Falha ao tentar realizar o filtro, por favor tente novamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao tentar excluir o aluno: "+error);
+
+            }
         }
     }
 }

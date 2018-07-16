@@ -267,18 +267,24 @@ namespace Pj_FrquenciaObjetivo
 
                 using (SqlDataReader reader = query.ExecuteReader())
                 {
-
-                    if (L_alunos.Count() == 0)
-                    {
+                    
+                   
+                   
                         if (reader.HasRows)
                         {
                             while (reader.Read())
                             {
-                                Aluno Al = new Aluno(reader.GetString(0), reader.GetString(1));
-                                L_alunos.Add(Al);
+                                Aluno Al = new Aluno(reader.GetString(0), reader.GetString(1), reader.GetString(2));
+                          
+                    
+                                        L_alunos1.Add(Al);
+                                   
+                               
+                            
+                          
                             }
                         }
-                    }
+                    
                 }
             }
 
@@ -334,7 +340,7 @@ namespace Pj_FrquenciaObjetivo
 
             try
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Status='INATIVO' WHERE Matricula='" +matricula + "'", conexao);
+                SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Status_al='INATIVO' WHERE Matricula='" +matricula + "'", conexao);
 
                 cmd.ExecuteNonQuery();
             }
