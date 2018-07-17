@@ -260,33 +260,34 @@ namespace Pj_FrquenciaObjetivo
             try
             {
 
-               
+
 
                 SqlCommand query = new SqlCommand("Select * from Alunos");
                 query.Connection = conexao;
 
                 using (SqlDataReader reader = query.ExecuteReader())
                 {
-                    
-                   
-                   
-                        if (reader.HasRows)
+
+
+
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                Aluno Al = new Aluno(reader.GetString(0), reader.GetString(1), reader.GetString(2));
-                          
-                    
-                                        L_alunos1.Add(Al);
-                                   
-                               
-                            
-                          
-                            }
+                            Aluno Al = new Aluno(reader.GetString(0), reader.GetString(1), reader.GetString(2));
+
+
+                            L_alunos1.Add(Al);
+                           
                         }
-                    
+
+                    }
                 }
+
             }
+
+        
 
 
 
@@ -313,7 +314,7 @@ namespace Pj_FrquenciaObjetivo
                 {
                     foreach (Aluno al in L_alunos1)
                     {
-                        SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Nome_aluno ='" + al.Nome1 + "' WHERE Matricula='" + al.Matricula1 + "'", conexao);
+                        SqlCommand cmd = new SqlCommand("UPDATE alunos SET Nome_aluno ='" + al.Nome1 + "' WHERE Matricula='" + al.Matricula1 + "'", conexao);
 
                         cmd.ExecuteNonQuery(); // executa cmd
                     }

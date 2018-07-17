@@ -25,7 +25,15 @@ namespace Pj_FrquenciaObjetivo
 
         private void registros_Load(object sender, EventArgs e)
         {
-            
+            if (Controller.L_alunos1.Count()!=0)
+            {
+                for (int i = Controller.L_alunos1.Count-1; i >= 0; i--)
+                {
+
+                    Controller.L_alunos1.RemoveAt(i);
+
+                }
+            }
             for (int i = 0; i < gridAlunosNovos.RowCount; i++)
             {
                gridAlunosNovos.Rows[i].DataGridView.Columns.Clear();
@@ -36,9 +44,9 @@ namespace Pj_FrquenciaObjetivo
             gridAlunosNovos.Columns.Add("Nome", "Nome");
             gridAlunosNovos.Columns.Add("Status", "Status");
 
-           
+            
             Controller.GetAlunos();
-
+            Controller.L_alunos1.Count();
             foreach (Aluno al in Controller.L_alunos1)
             {
                 try
