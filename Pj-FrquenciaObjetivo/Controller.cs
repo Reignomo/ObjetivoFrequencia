@@ -408,6 +408,22 @@ namespace Pj_FrquenciaObjetivo
 
 
         }
+
+        public static void getAlunoscNome()
+        {
+            if (Controller.L_alunos1.Count() != 0)
+            {
+                foreach(Aluno alunosx in L_alunos1)
+                {
+
+                    if(alunosx.Nome1=="")
+                    {
+                        L_alunos1.Remove(alunosx);
+                        break;
+                    }
+                }
+            }
+        }
     
 
 

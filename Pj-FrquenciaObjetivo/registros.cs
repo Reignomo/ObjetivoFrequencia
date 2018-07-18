@@ -47,9 +47,7 @@ namespace Pj_FrquenciaObjetivo
 
 
             Controller.GetAlunos();
-            cmb_alunos.DataSource =Controller.L_alunos1;
-            cmb_alunos.DisplayMember = "Aluno";
-            cmb_alunos.ValueMember = "Nome1";
+           
 
             foreach (Aluno al in Controller.L_alunos1)
             {
@@ -103,6 +101,10 @@ namespace Pj_FrquenciaObjetivo
             gridaponta.Columns.Add("Tipo", "Tipo");
 
             Controller.GetApontamentos();
+            Controller.getAlunoscNome();
+            cmb_alunos.DataSource = Controller.L_alunos1;
+            cmb_alunos.DisplayMember = "Aluno";
+            cmb_alunos.ValueMember = "Nome1";
 
             foreach (Apontamento aponta in Controller.L_apontamento1)
             {

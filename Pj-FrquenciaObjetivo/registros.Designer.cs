@@ -159,6 +159,7 @@
             // 
             // cmb_alunos
             // 
+            this.cmb_alunos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_alunos.FormattingEnabled = true;
             this.cmb_alunos.Location = new System.Drawing.Point(291, 360);
             this.cmb_alunos.Name = "cmb_alunos";

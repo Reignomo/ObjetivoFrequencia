@@ -438,6 +438,7 @@
             // 
             // cmb_mes
             // 
+            this.cmb_mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_mes.FormattingEnabled = true;
             this.cmb_mes.Items.AddRange(new object[] {
             "Janeiro",
@@ -459,6 +460,7 @@
             // 
             // cmb_ano
             // 
+            this.cmb_ano.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_ano.FormattingEnabled = true;
             this.cmb_ano.Items.AddRange(new object[] {
             "2016",
