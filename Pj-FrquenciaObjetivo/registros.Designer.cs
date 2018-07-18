@@ -40,7 +40,7 @@
             this.btn_voltar = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_alunos = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunosNovos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridaponta)).BeginInit();
@@ -110,6 +110,7 @@
             this.metroButton3.TabIndex = 9;
             this.metroButton3.Text = "Imprimir";
             this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroButton4
             // 
@@ -156,13 +157,13 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(178, 20);
             this.dateTimePicker1.TabIndex = 15;
             // 
-            // comboBox1
+            // cmb_alunos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(291, 360);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 21);
-            this.comboBox1.TabIndex = 16;
+            this.cmb_alunos.FormattingEnabled = true;
+            this.cmb_alunos.Location = new System.Drawing.Point(291, 360);
+            this.cmb_alunos.Name = "cmb_alunos";
+            this.cmb_alunos.Size = new System.Drawing.Size(178, 21);
+            this.cmb_alunos.TabIndex = 16;
             // 
             // label1
             // 
@@ -179,7 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 486);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_alunos);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.btn_voltar);
@@ -216,7 +217,7 @@
         private MetroFramework.Controls.MetroButton btn_voltar;
         private MetroFramework.Controls.MetroButton metroButton5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_alunos;
         private System.Windows.Forms.Label label1;
     }
 }

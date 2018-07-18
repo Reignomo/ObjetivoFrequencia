@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using DGVPrinterHelper;
 using System.IO; //declarando a biblioteca de entrada e saída de arquivos
                  //a biblioteca IO
 
@@ -46,8 +47,14 @@ namespace Pj_FrquenciaObjetivo
 
 
             Controller.GetAlunos();
+            cmb_alunos.DataSource =Controller.L_alunos1;
+            cmb_alunos.DisplayMember = "Aluno";
+            cmb_alunos.ValueMember = "Nome1";
+
             foreach (Aluno al in Controller.L_alunos1)
             {
+              
+             
                 try
                 {
 
@@ -60,6 +67,7 @@ namespace Pj_FrquenciaObjetivo
 
                     }
                 }
+                
 
                 catch (Exception)
                 {
@@ -335,6 +343,22 @@ private void metroButton1_Click(object sender, EventArgs e)
         private void metroLabel6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Apontamentos Objetivo Cubatão";
+            printer.SubTitle = string.Format("Data{0}", DateTime.Now);
+            printer.SubTitle = "- Apontamento \n Aluno: "+cmb_alunos.Text;
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "Objetivo Cubatão";
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(gridaponta);
         }
     }
 }
