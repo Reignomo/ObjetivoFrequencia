@@ -39,9 +39,10 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btn_voltar = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtm_data = new System.Windows.Forms.DateTimePicker();
             this.cmb_alunos = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Aluno = new System.Windows.Forms.Label();
+            this.cmb_matricula = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunosNovos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridaponta)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.metroTile1.ActiveControl = null;
             this.metroTile1.Location = new System.Drawing.Point(23, 65);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(262, 36);
+            this.metroTile1.Size = new System.Drawing.Size(419, 36);
             this.metroTile1.TabIndex = 0;
             this.metroTile1.Text = "Alunos novos";
             this.metroTile1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -62,7 +63,7 @@
             this.gridAlunosNovos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAlunosNovos.Location = new System.Drawing.Point(23, 107);
             this.gridAlunosNovos.Name = "gridAlunosNovos";
-            this.gridAlunosNovos.Size = new System.Drawing.Size(262, 156);
+            this.gridAlunosNovos.Size = new System.Drawing.Size(419, 156);
             this.gridAlunosNovos.TabIndex = 1;
             this.gridAlunosNovos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAlunosNovos_CellClick);
             // 
@@ -71,7 +72,7 @@
             this.gridaponta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridaponta.Location = new System.Drawing.Point(23, 323);
             this.gridaponta.Name = "gridaponta";
-            this.gridaponta.Size = new System.Drawing.Size(262, 150);
+            this.gridaponta.Size = new System.Drawing.Size(419, 150);
             this.gridaponta.TabIndex = 3;
             // 
             // metroTile2
@@ -79,14 +80,14 @@
             this.metroTile2.ActiveControl = null;
             this.metroTile2.Location = new System.Drawing.Point(23, 278);
             this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(262, 39);
+            this.metroTile2.Size = new System.Drawing.Size(419, 39);
             this.metroTile2.TabIndex = 4;
             this.metroTile2.Text = "Apontamentos";
             this.metroTile2.UseSelectable = true;
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(372, 240);
+            this.metroButton2.Location = new System.Drawing.Point(578, 240);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(97, 23);
             this.metroButton2.TabIndex = 5;
@@ -96,17 +97,17 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(291, 107);
+            this.richTextBox1.Location = new System.Drawing.Point(465, 107);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(178, 127);
+            this.richTextBox1.Size = new System.Drawing.Size(210, 127);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "";
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(291, 387);
+            this.metroButton3.Location = new System.Drawing.Point(465, 387);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(95, 16);
+            this.metroButton3.Size = new System.Drawing.Size(147, 16);
             this.metroButton3.TabIndex = 9;
             this.metroButton3.Text = "Imprimir";
             this.metroButton3.UseSelectable = true;
@@ -114,9 +115,9 @@
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(399, 387);
+            this.metroButton4.Location = new System.Drawing.Point(618, 387);
             this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(70, 16);
+            this.metroButton4.Size = new System.Drawing.Size(57, 16);
             this.metroButton4.TabIndex = 10;
             this.metroButton4.Text = "Filtar";
             this.metroButton4.UseSelectable = true;
@@ -124,7 +125,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(368, 292);
+            this.metroLabel1.Location = new System.Drawing.Point(542, 292);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(39, 19);
             this.metroLabel1.TabIndex = 12;
@@ -132,7 +133,7 @@
             // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(401, 465);
+            this.btn_voltar.Location = new System.Drawing.Point(612, 464);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(68, 19);
             this.btn_voltar.TabIndex = 13;
@@ -142,47 +143,59 @@
             // 
             // metroButton5
             // 
-            this.metroButton5.Location = new System.Drawing.Point(291, 240);
+            this.metroButton5.Location = new System.Drawing.Point(465, 240);
             this.metroButton5.Name = "metroButton5";
-            this.metroButton5.Size = new System.Drawing.Size(75, 23);
+            this.metroButton5.Size = new System.Drawing.Size(107, 23);
             this.metroButton5.TabIndex = 14;
             this.metroButton5.Text = "Excluir";
             this.metroButton5.UseSelectable = true;
             this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
-            // dateTimePicker1
+            // dtm_data
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(291, 314);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(178, 20);
-            this.dateTimePicker1.TabIndex = 15;
+            this.dtm_data.Location = new System.Drawing.Point(465, 314);
+            this.dtm_data.Name = "dtm_data";
+            this.dtm_data.Size = new System.Drawing.Size(210, 20);
+            this.dtm_data.TabIndex = 15;
+            this.dtm_data.Value = new System.DateTime(2018, 7, 12, 14, 44, 0, 0);
             // 
             // cmb_alunos
             // 
             this.cmb_alunos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_alunos.FormattingEnabled = true;
-            this.cmb_alunos.Location = new System.Drawing.Point(291, 360);
+            this.cmb_alunos.Location = new System.Drawing.Point(465, 360);
             this.cmb_alunos.Name = "cmb_alunos";
-            this.cmb_alunos.Size = new System.Drawing.Size(178, 21);
+            this.cmb_alunos.Size = new System.Drawing.Size(147, 21);
             this.cmb_alunos.TabIndex = 16;
             // 
-            // label1
+            // Aluno
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(372, 341);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Aluno";
+            this.Aluno.AutoSize = true;
+            this.Aluno.Location = new System.Drawing.Point(546, 341);
+            this.Aluno.Name = "Aluno";
+            this.Aluno.Size = new System.Drawing.Size(34, 13);
+            this.Aluno.TabIndex = 17;
+            this.Aluno.Text = "Aluno";
+            // 
+            // cmb_matricula
+            // 
+            this.cmb_matricula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_matricula.Enabled = false;
+            this.cmb_matricula.FormattingEnabled = true;
+            this.cmb_matricula.Location = new System.Drawing.Point(618, 360);
+            this.cmb_matricula.Name = "cmb_matricula";
+            this.cmb_matricula.Size = new System.Drawing.Size(57, 21);
+            this.cmb_matricula.TabIndex = 18;
             // 
             // registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 486);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(684, 486);
+            this.Controls.Add(this.cmb_matricula);
+            this.Controls.Add(this.Aluno);
             this.Controls.Add(this.cmb_alunos);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtm_data);
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.metroLabel1);
@@ -217,8 +230,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btn_voltar;
         private MetroFramework.Controls.MetroButton metroButton5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtm_data;
         private System.Windows.Forms.ComboBox cmb_alunos;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Aluno;
+        private System.Windows.Forms.ComboBox cmb_matricula;
     }
 }

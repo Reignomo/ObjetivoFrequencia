@@ -359,7 +359,7 @@ namespace Pj_FrquenciaObjetivo
 
         }
 
-        public static void GetApontamentos()
+        public static void GetApontamentos(string dia, string mes, string ano, string matricula)
         {
 
             string connString = "Server=USUARIO-PC\\SQLEXPRESS; Database=objetivo; Integrated Security=True;";
@@ -370,7 +370,7 @@ namespace Pj_FrquenciaObjetivo
 
 
 
-                SqlCommand query = new SqlCommand("Select * from  Apontamento ");
+                SqlCommand query = new SqlCommand("Select * from  Apontamento Where dia='"+dia+"' AND mes='"+mes+"' AND ano='"+ano+"' AND PK_Matricula='"+matricula+"'");
                 query.Connection = conexao;
 
                 using (SqlDataReader reader = query.ExecuteReader())
