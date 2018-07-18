@@ -30,19 +30,20 @@
         {
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.gridAlunosNovos = new System.Windows.Forms.DataGridView();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.gridaponta = new System.Windows.Forms.DataGridView();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btn_voltar = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunosNovos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridaponta)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTile1
@@ -65,23 +66,13 @@
             this.gridAlunosNovos.TabIndex = 1;
             this.gridAlunosNovos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAlunosNovos_CellClick);
             // 
-            // metroButton1
+            // gridaponta
             // 
-            this.metroButton1.Location = new System.Drawing.Point(412, 454);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(57, 19);
-            this.metroButton1.TabIndex = 2;
-            this.metroButton1.Text = "Sair";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(23, 323);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(262, 150);
-            this.dataGridView2.TabIndex = 3;
+            this.gridaponta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridaponta.Location = new System.Drawing.Point(23, 323);
+            this.gridaponta.Name = "gridaponta";
+            this.gridaponta.Size = new System.Drawing.Size(262, 150);
+            this.gridaponta.TabIndex = 3;
             // 
             // metroTile2
             // 
@@ -113,7 +104,7 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(298, 366);
+            this.metroButton3.Location = new System.Drawing.Point(291, 387);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(95, 16);
             this.metroButton3.TabIndex = 9;
@@ -122,24 +113,17 @@
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(399, 366);
+            this.metroButton4.Location = new System.Drawing.Point(399, 387);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(70, 16);
             this.metroButton4.TabIndex = 10;
             this.metroButton4.Text = "Filtar";
             this.metroButton4.UseSelectable = true;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(298, 340);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(171, 20);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(368, 318);
+            this.metroLabel1.Location = new System.Drawing.Point(368, 292);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(39, 19);
             this.metroLabel1.TabIndex = 12;
@@ -147,7 +131,7 @@
             // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(339, 454);
+            this.btn_voltar.Location = new System.Drawing.Point(401, 465);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(68, 19);
             this.btn_voltar.TabIndex = 13;
@@ -165,29 +149,54 @@
             this.metroButton5.UseSelectable = true;
             this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(291, 314);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(178, 20);
+            this.dateTimePicker1.TabIndex = 15;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(291, 360);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(178, 21);
+            this.comboBox1.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(372, 341);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Aluno";
+            // 
             // registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 486);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroTile2);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.gridaponta);
             this.Controls.Add(this.gridAlunosNovos);
             this.Controls.Add(this.metroTile1);
             this.Name = "registros";
             this.Text = "Registros";
             this.Load += new System.EventHandler(this.registros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunosNovos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridaponta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,16 +206,17 @@
 
         private MetroFramework.Controls.MetroTile metroTile1;
         private System.Windows.Forms.DataGridView gridAlunosNovos;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView gridaponta;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btn_voltar;
         private MetroFramework.Controls.MetroButton metroButton5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

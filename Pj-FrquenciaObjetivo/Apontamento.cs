@@ -18,16 +18,16 @@ namespace Pj_FrquenciaObjetivo
         private string matricula_aluno;
         private string tipo;
 
-        public Apontamento(string s, string d, string m,string a,string h,string min,string seg,string matri, string tipo)
+        public Apontamento(string matri, string s, string d, string m,string a,string h,string min,string seg, string tipo)
         {
+            this.matricula_aluno = matri;
             this.status = s;
             this.dia = d;
             this.mes = m;
             this.ano = a;
             this.hora = h;
             this.minuto = min;
-            this.Segundo = seg;
-            this.matricula_aluno = matri;
+            this.Segundo = seg;           
             this.tipo = tipo;
 
         }

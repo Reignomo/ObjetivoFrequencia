@@ -36,6 +36,7 @@
             this.tb_caminho = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lb_aguarde = new System.Windows.Forms.Label();
             this.tb_qtEntrada = new MetroFramework.Controls.MetroTextBox();
             this.tb_saida = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -59,7 +60,6 @@
             this.tb_dia = new System.Windows.Forms.TextBox();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.lb_aguarde = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -82,6 +82,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Coletando dados";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lb_carregando
             // 
@@ -183,6 +184,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Exeções";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // lb_aguarde
+            // 
+            this.lb_aguarde.AutoSize = true;
+            this.lb_aguarde.Location = new System.Drawing.Point(5, 165);
+            this.lb_aguarde.Name = "lb_aguarde";
+            this.lb_aguarde.Size = new System.Drawing.Size(303, 13);
+            this.lb_aguarde.TabIndex = 8;
+            this.lb_aguarde.Text = "Por favor aguarde essa operação pode levar alguns minutos ...";
+            this.lb_aguarde.Visible = false;
             // 
             // tb_qtEntrada
             // 
@@ -489,16 +500,6 @@
             this.metroButton3.Text = "Imprimir";
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click_1);
-            // 
-            // lb_aguarde
-            // 
-            this.lb_aguarde.AutoSize = true;
-            this.lb_aguarde.Location = new System.Drawing.Point(5, 165);
-            this.lb_aguarde.Name = "lb_aguarde";
-            this.lb_aguarde.Size = new System.Drawing.Size(303, 13);
-            this.lb_aguarde.TabIndex = 8;
-            this.lb_aguarde.Text = "Por favor aguarde essa operação pode levar alguns minutos ...";
-            this.lb_aguarde.Visible = false;
             // 
             // TratarDados
             // 

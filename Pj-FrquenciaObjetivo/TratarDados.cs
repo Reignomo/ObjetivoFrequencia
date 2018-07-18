@@ -101,7 +101,7 @@ namespace Pj_FrquenciaObjetivo
                                 status = "Saida";
                             }
                     TodosApontamento[int.Parse(mes), int.Parse(dia), Coutap] = linha;
-                    Apontamento apm = new Apontamento(status, dia, mes, ano, hora, minuto, segundo, matricula, "Apontamento");
+                    Apontamento apm = new Apontamento(matricula, status, dia, mes, ano, hora, minuto, segundo, "Apontamento");
                    
                         Controller.CarregaApontamentos(apm);
                        
@@ -462,6 +462,11 @@ namespace Pj_FrquenciaObjetivo
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

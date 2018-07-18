@@ -5,7 +5,7 @@ use objetivo;
 create table Alunos(
 Matricula varchar(6) primary key,
 Nome_aluno varchar(150),
-Status varchar(30)
+Status_al varchar(30)
 );
 
 create table Apontamento (
