@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtb_descricao = new System.Windows.Forms.RichTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.tratarDadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,13 +48,14 @@
             this.metroTile1.Text = "Descrição do sistema";
             this.metroTile1.UseSelectable = true;
             // 
-            // richTextBox1
+            // rtb_descricao
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(225, 87);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(278, 278);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.rtb_descricao.Enabled = false;
+            this.rtb_descricao.Location = new System.Drawing.Point(225, 134);
+            this.rtb_descricao.Name = "rtb_descricao";
+            this.rtb_descricao.Size = new System.Drawing.Size(278, 231);
+            this.rtb_descricao.TabIndex = 2;
+            this.rtb_descricao.Text = "";
             // 
             // metroButton1
             // 
@@ -111,7 +112,7 @@
             this.ClientSize = new System.Drawing.Size(523, 403);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroTile1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtb_descricao);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Home";
@@ -128,7 +129,7 @@
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroTile metroTile1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtb_descricao;
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.ToolStripMenuItem tratarDadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;

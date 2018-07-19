@@ -314,7 +314,7 @@ namespace Pj_FrquenciaObjetivo
                 {
                     foreach (Aluno al in L_alunos1)
                     {
-                        SqlCommand cmd = new SqlCommand("UPDATE alunos SET Nome_aluno ='" + al.Nome1 + "' WHERE Matricula='" + al.Matricula1 + "'", conexao);
+                        SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Nome_aluno ='" + al.Nome1 + "' WHERE Matricula='" + al.Matricula1 + "'", conexao);
 
                         cmd.ExecuteNonQuery(); // executa cmd
                     }
@@ -416,7 +416,7 @@ namespace Pj_FrquenciaObjetivo
                 foreach(Aluno alunosx in L_alunos1)
                 {
 
-                    if(alunosx.Nome1=="")
+                    if(alunosx.Nome1=="" || alunosx.Status1!="ATIVO")
                     {
                         L_alunos1.Remove(alunosx);
                         break;

@@ -20,7 +20,18 @@ namespace Pj_FrquenciaObjetivo
 
         private void Home_Load(object sender, EventArgs e)
         {
-
+            rtb_descricao.Text= "           Sistema de frequência objetivo Cubatao"+
+           "\n  Sistema desenvolvido para gerenciar o controle de frequencia de escolas." +
+           "\n  - Funcionalidades" +
+           "\n  • Listar apontamento." +
+           "\n  • Tratar exceções." +
+           "\n  • Salvar apontamento em base de dados." +
+           "\n  • Visualizar apontamento." +
+           "\n  • Filtrar apontamentos." +
+           "\n  • Adicionar e alterar nome de alunos." +
+           "\n  • Gerar relatórios dos apontamentos." +
+           "\n  Denvolvedor;" +
+           "\n  Evandro Ignacio Estudante -IFSP Cubatão";
         }
 
         private void tratarDadosToolStripMenuItem_Click(object sender, EventArgs e)

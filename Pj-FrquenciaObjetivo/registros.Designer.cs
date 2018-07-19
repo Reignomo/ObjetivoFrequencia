@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(registros));
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.gridAlunosNovos = new System.Windows.Forms.DataGridView();
             this.gridaponta = new System.Windows.Forms.DataGridView();
@@ -102,7 +103,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(210, 127);
             this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // metroButton3
             // 
@@ -122,6 +123,7 @@
             this.metroButton4.TabIndex = 10;
             this.metroButton4.Text = "Filtar";
             this.metroButton4.UseSelectable = true;
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
             // metroLabel1
             // 

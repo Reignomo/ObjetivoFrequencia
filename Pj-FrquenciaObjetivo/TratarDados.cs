@@ -26,9 +26,31 @@ namespace Pj_FrquenciaObjetivo
 
         private void TratarDados_Load(object sender, EventArgs e)
         {
-           
-            try
+            // Limpando a listas de alunos 
+            if (Controller.L_alunos1.Count() != 0)
             {
+                for (int i = Controller.L_alunos1.Count - 1; i >= 0; i--)
+                {
+
+                    Controller.L_alunos1.RemoveAt(i);
+
+                }
+            }
+            // limpando a lista de apontamentos
+
+
+            if (Controller.L_apontamento1.Count() != 0)
+            {
+                for (int i = Controller.L_apontamento1.Count - 1; i >= 0; i--)
+                {
+
+                    Controller.L_apontamento1.RemoveAt(i);
+
+                }
+
+            }
+                try
+                {
                 int qtMaxima = 0;
                 int Coutap = 0;
 
