@@ -18,6 +18,7 @@ namespace Pj_FrquenciaObjetivo
         private static List<Aluno> L_alunos = new List<Aluno>();
         private static string ExcAluno;
 
+
         internal static List<Apontamento> L_apontamento1 { get => L_apontamento; set => L_apontamento = value; }
         internal static List<Apontamento> L_execoes1 { get => L_execoes; set => L_execoes = value; }
         public static Thread Thread1 { get => Thread; set => Thread = value; }

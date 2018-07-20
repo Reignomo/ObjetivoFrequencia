@@ -242,7 +242,7 @@ private void metroButton1_Click(object sender, EventArgs e)
                      }
                    
                 }
-                MessageBox.Show("Nome alterados com sucesso ");
+                MessageBox.Show("Nomes adicionados com sucesso !");
                 Controller.AlteraNomes();
 
             }
@@ -306,17 +306,10 @@ private void metroButton1_Click(object sender, EventArgs e)
                 }
             }
 
-          
-            Controller.GetAlunos();
-            Controller.getAlunoscNome();
-            cmb_alunos.DataSource = Controller.L_alunos1;
-            cmb_alunos.DisplayMember = "Aluno";
-            cmb_alunos.ValueMember = "Nome1";
-            cmb_matricula.DataSource = Controller.L_alunos1;
-            cmb_matricula.DisplayMember = "Aluno";
-            cmb_matricula.ValueMember = "Matricula1";
-            cmb_matricula.Refresh();
-            cmb_alunos.Refresh();
+            Home Hhome = new Home();
+            this.Hide(); // use dessa maneira.
+            Hhome.ShowDialog();
+
 
 
 
@@ -342,7 +335,7 @@ private void metroButton1_Click(object sender, EventArgs e)
             try
             {
                 Controller.ExcluiAluno(Controller.ExcAluno1);
-                MessageBox.Show("Aluno Excluid com sucesso !");
+                MessageBox.Show("Aluno Excluido com sucesso !");
 
                 for (int i = 0; i < gridAlunosNovos.RowCount; i++)
                 {
@@ -426,13 +419,9 @@ private void metroButton1_Click(object sender, EventArgs e)
                 }
             }
 
-            Controller.getAlunoscNome();
-            cmb_alunos.DataSource = Controller.L_alunos1;
-            cmb_alunos.DisplayMember = "Aluno";
-            cmb_alunos.ValueMember = "Nome1";
-            cmb_matricula.DataSource = Controller.L_alunos1;
-            cmb_matricula.DisplayMember = "Aluno";
-            cmb_matricula.ValueMember = "Matricula1";
+            Home Hhome = new Home();
+            this.Hide(); // use dessa maneira.
+            Hhome.ShowDialog();
         }
 
         private void cmb_ano_SelectedIndexChanged(object sender, EventArgs e)
