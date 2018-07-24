@@ -124,9 +124,10 @@ namespace Pj_FrquenciaObjetivo
                             }
                     TodosApontamento[int.Parse(mes), int.Parse(dia), Coutap] = linha;
                     Apontamento apm = new Apontamento(matricula, status, dia, mes, ano, hora, minuto, segundo, "Apontamento");
-                   
-                        Controller.CarregaApontamentos(apm);
-                       
+                    Controller.CarregaApontamentos(apm);
+
+
+
 
 
                         //  MessageBox.Show("Mes: "+int.Parse(mes)+" - Dia: "+ int.Parse(dia) + " - Arrey : "+Coutap +" - Conteudo: "+ TodosApontamento[int.Parse(mes), int.Parse(dia), Coutap]) ;
@@ -139,6 +140,47 @@ namespace Pj_FrquenciaObjetivo
                     //temos que fechar o arquivo texto que está aberto
                     Controller.TrataEx();
                     x.Close();
+
+                    //Tratando exeções
+                    //abrindo txt
+                   
+                    int qtex = Controller.L_execoes1.Count();            
+                    foreach (Apontamento ex in Controller.L_execoes1)
+                    {
+                        x = File.OpenText(Caminho);
+                        while (x.EndOfStream != true)
+                        {
+                                string linha = x.ReadLine();
+                              
+                            //Pegando partes do 
+                                string statusEX = linha.Substring(0, 2);
+                                string diaEX = linha.Substring(2, 2);
+                                string mesEX = linha.Substring(4, 2);
+                                string anoEX = linha.Substring(6, 4);
+                                string matriculaEX = linha.Substring(16, 5);
+
+                        
+                                    if(ex.Matricula_aluno == matriculaEX && ex.Dia==diaEX && ex.Mes==mesEX && ex.Ano==anoEX)                                     
+                                    {
+                                        if (ex.Status == "01")
+                                        {
+                                         Apontamento apm = new Apontamento(matriculaEX,"Saida",diaEX,mesEX,anoEX,"18","00","00", "Exceção");
+                                         Controller.CarregaApontamentos(apm);
+                                    }
+                                        else
+                                        {
+                                         Apontamento apm = new Apontamento(matriculaEX, "Entrada", diaEX, mesEX, anoEX, "07", "00", "00", "Exceção");
+                                          Controller.CarregaApontamentos(apm);
+                                        }
+                                    }
+                                    //verificando qual a exceãodo aluno para poder criar a correção
+                                  
+                        }
+
+                        x.Close();
+                    }
+
+                        
                 }
             }
 
@@ -214,8 +256,13 @@ namespace Pj_FrquenciaObjetivo
             pgb_coleta.Visible = false;
             lb_carregando.Visible = false;
             tb_qtex.Text = Convert.ToString(Controller.L_execoes1.Count());
-            tb_qtEntrada.Text = Convert.ToString(Controller.GetQtEntrada());
-            tb_saida.Text = Convert.ToString(Controller.GetqtSaida());
+            if (Controller.L_apontamento1.Count == 0)
+            {
+                Controller.GetAllApontamentos();
+            }
+                tb_qtEntrada.Text = Convert.ToString(Controller.GetQtEntrada());
+                tb_saida.Text = Convert.ToString(Controller.GetqtSaida());
+            
 
 
 

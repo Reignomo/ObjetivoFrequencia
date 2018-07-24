@@ -41,5 +41,8 @@ namespace Pj_FrquenciaObjetivo
         public string Segundo { get => segundo; set => segundo = value; }
         public string Matricula_aluno { get => matricula_aluno; set => matricula_aluno = value; }
         public string Tipo { get => tipo; set => tipo = value; }
+
+
+       
     }
 }

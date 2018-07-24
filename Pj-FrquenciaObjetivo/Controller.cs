@@ -425,6 +425,59 @@ namespace Pj_FrquenciaObjetivo
                 }
             }
         }
+
+        public static void GetAllApontamentos()
+        {
+
+            string connString = "Server=USUARIO-PC\\SQLEXPRESS; Database=objetivo; Integrated Security=True;";
+            SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
+            conexao.Open();
+            try
+            {
+
+
+
+                SqlCommand query = new SqlCommand("Select * from Apontamento");
+                query.Connection = conexao;
+
+                using (SqlDataReader reader = query.ExecuteReader())
+                {
+
+
+
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Apontamento Ap = new Apontamento(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8));
+
+
+                            L_apontamento1.Add(Ap);
+
+                        }
+
+                    }
+                }
+
+            }
+
+
+
+
+
+            catch (Exception e)
+            {
+                MessageBox.Show("Erro ao tentar carregador os dados or favor contate o administrador" + e);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+        }
+
+       
     
 
 
