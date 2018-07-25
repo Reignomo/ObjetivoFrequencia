@@ -141,44 +141,7 @@ namespace Pj_FrquenciaObjetivo
                     Controller.TrataEx();
                     x.Close();
 
-                    //Tratando exeções
-                    //abrindo txt
                    
-                    int qtex = Controller.L_execoes1.Count();            
-                    foreach (Apontamento ex in Controller.L_execoes1)
-                    {
-                        x = File.OpenText(Caminho);
-                        while (x.EndOfStream != true)
-                        {
-                                string linha = x.ReadLine();
-                              
-                            //Pegando partes do 
-                                string statusEX = linha.Substring(0, 2);
-                                string diaEX = linha.Substring(2, 2);
-                                string mesEX = linha.Substring(4, 2);
-                                string anoEX = linha.Substring(6, 4);
-                                string matriculaEX = linha.Substring(16, 5);
-
-                        
-                                    if(ex.Matricula_aluno == matriculaEX && ex.Dia==diaEX && ex.Mes==mesEX && ex.Ano==anoEX)                                     
-                                    {
-                                        if (ex.Status == "01")
-                                        {
-                                         Apontamento apm = new Apontamento(matriculaEX,"Saida",diaEX,mesEX,anoEX,"18","00","00", "Exceção");
-                                         Controller.CarregaApontamentos(apm);
-                                    }
-                                        else
-                                        {
-                                         Apontamento apm = new Apontamento(matriculaEX, "Entrada", diaEX, mesEX, anoEX, "07", "00", "00", "Exceção");
-                                          Controller.CarregaApontamentos(apm);
-                                        }
-                                    }
-                                    //verificando qual a exceãodo aluno para poder criar a correção
-                                  
-                        }
-
-                        x.Close();
-                    }
 
                         
                 }
@@ -281,13 +244,57 @@ namespace Pj_FrquenciaObjetivo
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-           
+            
             lb_aguarde.Visible = true;
             int qt = 0;
             try
             {
                 qt = Controller.SetDadosBanco();
                 MessageBox.Show("Tratamento de exceções efetuado com sucesso ! \n Quantidade de alunos novos adicionados: "+Convert.ToString(qt));
+                //Tratando exeções
+                //abrindo txt
+                StreamReader x;
+                string Caminho = tb_caminho.Text;
+                
+
+                int qtex = Controller.L_execoes1.Count();
+                foreach (Apontamento ex in Controller.L_execoes1)
+                {
+                    x = File.OpenText(Caminho);
+                    while (x.EndOfStream != true)
+                    {
+                        string linha = x.ReadLine();
+
+                        //Pegando partes do 
+                        string statusEX = linha.Substring(0, 2);
+                        string diaEX = linha.Substring(2, 2);
+                        string mesEX = linha.Substring(4, 2);
+                        string anoEX = linha.Substring(6, 4);
+                        string matriculaEX = linha.Substring(16, 5);
+
+
+                        if (ex.Matricula_aluno == matriculaEX && ex.Dia == diaEX && ex.Mes == mesEX && ex.Ano == anoEX)
+                        {
+                            if (ex.Status == "01")
+                            {
+                                Apontamento apm = new Apontamento(matriculaEX, "Saida", diaEX, mesEX, anoEX, "18", "00", "00", "Exceção");
+                                Controller.CarregaApontamentos(apm);
+                            }
+                            else
+                            {
+                                Apontamento apm = new Apontamento(matriculaEX, "Entrada", diaEX, mesEX, anoEX, "07", "00", "00", "Exceção");
+                                Controller.CarregaApontamentos(apm);
+                            }
+                        }
+                        //verificando qual a exceãodo aluno para poder criar a correção
+
+                    }
+
+                    x.Close();
+                }
+                Controller.SetDadosBanco();
+                MessageBox.Show("Exceções tratadas com sucesso !");
+
             }
             catch
             {
@@ -297,8 +304,58 @@ namespace Pj_FrquenciaObjetivo
             {
                 lb_aguarde.Visible = false;
             }
-                                                 
-       
+
+            if (Controller.L_apontamento1.Count() != 0)
+            {
+                for (int i = Controller.L_apontamento1.Count - 1; i >= 0; i--)
+                {
+
+                    Controller.L_apontamento1.RemoveAt(i);
+
+                }
+
+            }
+            //Criando o txt com as exceções
+            try
+            {
+                Controller.GetAllApontamentos();
+                ////declarando a variavel do tipo StreamWriter para 
+                //abrir ou criar um arquivo para escrita 
+                StreamWriter arq;
+
+                ////Colocando o caminho fisico e o nome do arquivo a ser criado
+                //finalizando com .txt
+               
+                string CaminhoNome = tb_caminho.Text+"Excecao.txt";
+
+                //utilizando o metodo para criar um arquivo texto
+                //e associando o caminho e nome ao metodo
+                arq = File.CreateText(CaminhoNome);
+
+                //aqui, exemplo de escrever no arquivo texto
+                //como se fossemos criar um recibo de pagamento
+                foreach (Apontamento apm in Controller.L_apontamento1)
+                {
+                    if (apm.Status == "Entrada")
+                    {
+
+                        arq.WriteLine("01" + apm.Dia + apm.Mes + apm.Ano + apm.Hora + apm.Minuto + apm.Segundo + apm.Matricula_aluno);
+                    }
+                    else
+                    {
+                        arq.WriteLine("02" + apm.Dia + apm.Mes + apm.Ano + apm.Hora + apm.Minuto + apm.Segundo + apm.Matricula_aluno);
+                    }
+                }
+                //fechando o arquivo texto com o método .Close()
+                arq.Close();
+            }
+            catch(Exception excp)
+            {
+                MessageBox.Show("Erro ao tentar criar arquivo de exceção, por favor verifique as permissões de pasta"+excp);
+            }
+
+
+
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)

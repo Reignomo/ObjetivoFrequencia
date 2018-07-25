@@ -40,9 +40,10 @@ namespace Pj_FrquenciaObjetivo
 
         public static void CarregaApontamentos(Apontamento Aponta)
         {
-
-            L_apontamento1.Add(Aponta);
-
+            
+                L_apontamento1.Add(Aponta);
+            
+           
 
         }
 

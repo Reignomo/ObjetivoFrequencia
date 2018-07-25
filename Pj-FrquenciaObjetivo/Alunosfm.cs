@@ -23,5 +23,13 @@ namespace Pj_FrquenciaObjetivo
         {
 
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+            Home Hhome = new Home();
+            this.Hide(); // use dessa maneira.
+            Hhome.ShowDialog();
+        }
     }
 }

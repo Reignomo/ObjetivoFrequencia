@@ -54,5 +54,12 @@ namespace Pj_FrquenciaObjetivo
             this.Hide(); // use dessa maneira.
             regis.ShowDialog();
         }
+
+        private void alunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Alunosfm af = new Alunosfm();
+            this.Hide(); // use dessa maneira.
+            af.ShowDialog();
+        }
     }
 }
