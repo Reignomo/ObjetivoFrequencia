@@ -160,7 +160,7 @@
             this.dtm_data.Name = "dtm_data";
             this.dtm_data.Size = new System.Drawing.Size(210, 20);
             this.dtm_data.TabIndex = 15;
-            this.dtm_data.Value = new System.DateTime(2018, 7, 12, 14, 44, 0, 0);
+            this.dtm_data.Value = new System.DateTime(2018, 7, 25, 0, 0, 0, 0);
             // 
             // cmb_alunos
             // 

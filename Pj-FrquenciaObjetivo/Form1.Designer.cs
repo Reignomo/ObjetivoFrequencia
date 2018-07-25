@@ -149,7 +149,7 @@
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(80, 19);
             this.metroLabel3.TabIndex = 1;
-            this.metroLabel3.Text = "Versão 1.0.0";
+            this.metroLabel3.Text = "Versão 1.0.1";
             // 
             // Form1
             // 

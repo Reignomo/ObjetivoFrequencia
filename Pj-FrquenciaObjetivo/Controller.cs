@@ -17,6 +17,8 @@ namespace Pj_FrquenciaObjetivo
         private static Thread Thread;
         private static List<Aluno> L_alunos = new List<Aluno>();
         private static string ExcAluno;
+        private static int qtEntrada;
+        private static int qtSaida;
 
 
         internal static List<Apontamento> L_apontamento1 { get => L_apontamento; set => L_apontamento = value; }
@@ -24,6 +26,8 @@ namespace Pj_FrquenciaObjetivo
         public static Thread Thread1 { get => Thread; set => Thread = value; }
         public static List<Aluno> L_alunos1 { get => L_alunos; set => L_alunos = value; }
         public static string ExcAluno1 { get => ExcAluno; set => ExcAluno = value; }
+        public static int QtEntrada { get => qtEntrada; set => qtEntrada = value; }
+        public static int QtSaida { get => qtSaida; set => qtSaida = value; }
 
         public static void Splash()
         {

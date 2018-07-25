@@ -26,10 +26,11 @@ namespace Pj_FrquenciaObjetivo
 
         private void TratarDados_Load(object sender, EventArgs e)
         {
+            Controller.Thread1.Abort();
             // Limpando a listas de alunos 
             if (Controller.L_alunos1.Count() != 0)
             {
-                for (int i = Controller.L_alunos1.Count - 1; i >= 0; i--)
+                for (int i = Controller.L_alunos1.Count; i >= 0; i--)
                 {
 
                     Controller.L_alunos1.RemoveAt(i);
@@ -41,7 +42,7 @@ namespace Pj_FrquenciaObjetivo
 
             if (Controller.L_apontamento1.Count() != 0)
             {
-                for (int i = Controller.L_apontamento1.Count - 1; i >= 0; i--)
+                for (int i = Controller.L_apontamento1.Count -1; i >= -1; i--)
                 {
 
                     Controller.L_apontamento1.RemoveAt(i);
@@ -117,10 +118,12 @@ namespace Pj_FrquenciaObjetivo
                      if(status=="01")
                             {
                                 status = "Entrada";
+                            Controller.QtEntrada++;
                             }
                             else
                             {
                                 status = "Saida";
+                            Controller.QtSaida++;
                             }
                     TodosApontamento[int.Parse(mes), int.Parse(dia), Coutap] = linha;
                     Apontamento apm = new Apontamento(matricula, status, dia, mes, ano, hora, minuto, segundo, "Apontamento");
@@ -219,12 +222,9 @@ namespace Pj_FrquenciaObjetivo
             pgb_coleta.Visible = false;
             lb_carregando.Visible = false;
             tb_qtex.Text = Convert.ToString(Controller.L_execoes1.Count());
-            if (Controller.L_apontamento1.Count == 0)
-            {
-                Controller.GetAllApontamentos();
-            }
-                tb_qtEntrada.Text = Convert.ToString(Controller.GetQtEntrada());
-                tb_saida.Text = Convert.ToString(Controller.GetqtSaida());
+            
+                tb_qtEntrada.Text = Convert.ToString(Controller.QtEntrada);
+                tb_saida.Text = Convert.ToString(Controller.QtSaida);
             
 
 
@@ -259,38 +259,19 @@ namespace Pj_FrquenciaObjetivo
 
                 int qtex = Controller.L_execoes1.Count();
                 foreach (Apontamento ex in Controller.L_execoes1)
-                {
-                    x = File.OpenText(Caminho);
-                    while (x.EndOfStream != true)
-                    {
-                        string linha = x.ReadLine();
-
-                        //Pegando partes do 
-                        string statusEX = linha.Substring(0, 2);
-                        string diaEX = linha.Substring(2, 2);
-                        string mesEX = linha.Substring(4, 2);
-                        string anoEX = linha.Substring(6, 4);
-                        string matriculaEX = linha.Substring(16, 5);
-
-
-                        if (ex.Matricula_aluno == matriculaEX && ex.Dia == diaEX && ex.Mes == mesEX && ex.Ano == anoEX)
-                        {
-                            if (ex.Status == "01")
+                {                                                           
+                          if (ex.Status == "Entrada")
                             {
-                                Apontamento apm = new Apontamento(matriculaEX, "Saida", diaEX, mesEX, anoEX, "18", "00", "00", "Exceção");
+                                Apontamento apm = new Apontamento(ex.Matricula_aluno, "Saida", ex.Dia,ex.Mes,ex.Ano, "18", "00", "00", "Exceção");
                                 Controller.CarregaApontamentos(apm);
                             }
                             else
                             {
-                                Apontamento apm = new Apontamento(matriculaEX, "Entrada", diaEX, mesEX, anoEX, "07", "00", "00", "Exceção");
+                                Apontamento apm = new Apontamento(ex.Matricula_aluno, "Entrada", ex.Dia, ex.Mes, ex.Ano, "07", "00", "00", "Exceção");
                                 Controller.CarregaApontamentos(apm);
                             }
-                        }
-                        //verificando qual a exceãodo aluno para poder criar a correção
-
-                    }
-
-                    x.Close();
+                        
+                        //verificando qual a exceãodo aluno para poder criar a correção                                  
                 }
                 Controller.SetDadosBanco();
                 MessageBox.Show("Exceções tratadas com sucesso !");
@@ -353,6 +334,7 @@ namespace Pj_FrquenciaObjetivo
             {
                 MessageBox.Show("Erro ao tentar criar arquivo de exceção, por favor verifique as permissões de pasta"+excp);
             }
+
 
 
 
