@@ -34,15 +34,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grid_alunosAtivos = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Grid_alunosInativos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_alunosAtivos)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_alunosInativos)).BeginInit();
             this.SuspendLayout();
             // 
             // metroButton1
@@ -80,7 +80,7 @@
             this.groupBox1.Controls.Add(this.metroButton3);
             this.groupBox1.Controls.Add(this.metroButton2);
             this.groupBox1.Controls.Add(this.metroTile2);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.grid_alunosAtivos);
             this.groupBox1.Location = new System.Drawing.Point(12, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(377, 264);
@@ -95,6 +95,7 @@
             this.metroButton3.TabIndex = 2;
             this.metroButton3.Text = "Salvar alteração";
             this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroButton2
             // 
@@ -105,19 +106,19 @@
             this.metroButton2.Text = "Excluir aluno";
             this.metroButton2.UseSelectable = true;
             // 
-            // dataGridView1
+            // grid_alunosAtivos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 57);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(359, 172);
-            this.dataGridView1.TabIndex = 0;
+            this.grid_alunosAtivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_alunosAtivos.Location = new System.Drawing.Point(6, 57);
+            this.grid_alunosAtivos.Name = "grid_alunosAtivos";
+            this.grid_alunosAtivos.Size = new System.Drawing.Size(359, 172);
+            this.grid_alunosAtivos.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.metroButton5);
             this.groupBox2.Controls.Add(this.metroButton4);
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.Grid_alunosInativos);
             this.groupBox2.Controls.Add(this.metroTile1);
             this.groupBox2.Location = new System.Drawing.Point(12, 299);
             this.groupBox2.Name = "groupBox2";
@@ -143,13 +144,13 @@
             this.metroButton4.Text = "Reativar cadastro";
             this.metroButton4.UseSelectable = true;
             // 
-            // dataGridView2
+            // Grid_alunosInativos
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 58);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(359, 161);
-            this.dataGridView2.TabIndex = 0;
+            this.Grid_alunosInativos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_alunosInativos.Location = new System.Drawing.Point(6, 58);
+            this.Grid_alunosInativos.Name = "Grid_alunosInativos";
+            this.Grid_alunosInativos.Size = new System.Drawing.Size(359, 161);
+            this.Grid_alunosInativos.TabIndex = 0;
             // 
             // Alunosfm
             // 
@@ -163,9 +164,9 @@
             this.Text = "Alunos";
             this.Load += new System.EventHandler(this.Alunosfm_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_alunosAtivos)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_alunosInativos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,10 +179,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grid_alunosAtivos;
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroButton metroButton4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView Grid_alunosInativos;
     }
 }

@@ -61,5 +61,12 @@ namespace Pj_FrquenciaObjetivo
             this.Hide(); // use dessa maneira.
             af.ShowDialog();
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            this.Hide(); // use dessa maneira.
+            f1.ShowDialog();
+        }
     }
 }

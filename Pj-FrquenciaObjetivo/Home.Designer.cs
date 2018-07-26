@@ -66,6 +66,7 @@
             this.metroButton1.TabIndex = 3;
             this.metroButton1.Text = "Sair";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroPanel1
             // 

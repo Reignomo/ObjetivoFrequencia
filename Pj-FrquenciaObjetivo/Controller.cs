@@ -365,6 +365,32 @@ namespace Pj_FrquenciaObjetivo
 
         }
 
+        public static void Reativar(string matricula)
+        {
+            string connString = "Server=USUARIO-PC\\SQLEXPRESS; Database=objetivo; Integrated Security=True;";
+            SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
+            conexao.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Status_al='ATIVO' WHERE Matricula='" + matricula + "'", conexao);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show("Erro ao tentar excluir aluno, por favor contate o administrador" + e);
+            }
+
+            finally
+            {
+                conexao.Close();
+            }
+
+
+        }
+
         public static void GetApontamentos(string dia, string mes, string ano, string matricula)
         {
 
@@ -417,17 +443,31 @@ namespace Pj_FrquenciaObjetivo
 
         public static void getAlunoscNome()
         {
+            int[] exclui = new int[L_alunos.Count()];
+            int contador = 0;
+            int contador2 = 0;
             if (Controller.L_alunos1.Count() != 0)
             {
+               
                 foreach(Aluno alunosx in L_alunos1)
                 {
 
                     if(alunosx.Nome1=="" || alunosx.Status1!="ATIVO")
                     {
-                        L_alunos1.Remove(alunosx);
-                        break;
+                        exclui[contador] = contador2;
+                        contador++;
+                        //L_alunos1.Remove(alunosx);
+                       
                     }
+                    contador2++;
                 }
+                contador = contador- 1;
+                while (contador>=0)
+                {
+                    L_alunos1.RemoveAt(exclui[contador]);
+                    contador--;
+                }
+                L_alunos1.Count();
             }
         }
 
