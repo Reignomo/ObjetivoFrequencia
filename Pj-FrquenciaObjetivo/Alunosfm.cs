@@ -127,5 +127,92 @@ namespace Pj_FrquenciaObjetivo
             Hhome.ShowDialog();
 
         }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            if (Controller.L_alunos1.Count() != 0)
+            {
+                for (int i = Controller.L_alunos1.Count - 1; i >= 0; i--)
+                {
+
+                    Controller.L_alunos1.RemoveAt(i);
+
+                }
+            }
+            // pegando alunos inativos
+
+            try
+            {
+                
+                // Salvando dados alterados no grid
+                Controller.GetAlunos();
+                Controller.GetAlunosInativos();
+
+                int qtd = Controller.L_alunos1.Count(), cont = 0;
+                foreach (Aluno al in Controller.L_alunos1)
+                {
+
+
+
+                    if (cont <= qtd)
+                    {
+
+                        if (al.Matricula1.Equals(Grid_alunosInativos.Rows[cont].Cells["Matricula"].Value.ToString()))
+                        {
+                            al.Nome1 = Grid_alunosInativos.Rows[cont].Cells["Nome"].Value.ToString();
+                            cont++;
+                        }
+
+
+                    }
+
+                }
+                MessageBox.Show("Nomes adicionados com sucesso !");
+                Controller.AlteraNomes();
+
+            }
+
+            catch (Exception er)
+            {
+                MessageBox.Show("erro" + er);
+            }
+            Grid_alunosInativos.Refresh();
+
+
+
+            Home Hhome = new Home();
+            this.Hide(); // use dessa maneira.
+            Hhome.ShowDialog();
+
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            Controller.ExcluiAluno(Controller.ExcAluno1);
+            MessageBox.Show("Aluno Excluido com sucesso !");
+            Home Hhome = new Home();
+            this.Hide(); // use dessa maneira.
+            Hhome.ShowDialog();
+        }
+
+        private void grid_alunosAtivos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Controller.ExcAluno1 = grid_alunosAtivos.Rows[e.RowIndex].Cells["Matricula"].Value.ToString();
+        }
+
+        private void Grid_alunosInativos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Controller.ExcAluno1 = Grid_alunosInativos.Rows[e.RowIndex].Cells["Matricula"].Value.ToString();
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            Controller.Reativar(Controller.ExcAluno1);
+            MessageBox.Show("Cadastro reativado com sucesso !");
+            Home Hhome = new Home();
+            this.Hide(); // use dessa maneira.
+            Hhome.ShowDialog();
+        }
     }
-}
+  }
+

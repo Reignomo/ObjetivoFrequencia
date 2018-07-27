@@ -520,18 +520,50 @@ namespace Pj_FrquenciaObjetivo
                 conexao.Close();
             }
 
+
+
         }
 
-       
-    
+
+
+        public static void GetAlunosInativos()
+        {
+
+            int[] exclui = new int[L_alunos.Count()];
+            int contador = 0;
+            int contador2 = 0;
+            if (Controller.L_alunos1.Count() != 0)
+            {
+
+                foreach (Aluno alunosx in L_alunos1)
+                {
+
+                    if (alunosx.Status1 == "ATIVO")
+                    {
+                        exclui[contador] = contador2;
+                        contador++;
+                        //L_alunos1.Remove(alunosx);
+
+                    }
+                    contador2++;
+                }
+                contador = contador - 1;
+                while (contador >= 0)
+                {
+                    L_alunos1.RemoveAt(exclui[contador]);
+                    contador--;
+                }
+                L_alunos1.Count();
+            }
+
+        }
 
 
 
 
 
 
-
-    }
+        }
 
 
 }

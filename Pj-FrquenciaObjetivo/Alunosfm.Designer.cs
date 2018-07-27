@@ -105,6 +105,7 @@
             this.metroButton2.TabIndex = 1;
             this.metroButton2.Text = "Excluir aluno";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // grid_alunosAtivos
             // 
@@ -113,6 +114,7 @@
             this.grid_alunosAtivos.Name = "grid_alunosAtivos";
             this.grid_alunosAtivos.Size = new System.Drawing.Size(359, 172);
             this.grid_alunosAtivos.TabIndex = 0;
+            this.grid_alunosAtivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_alunosAtivos_CellClick);
             // 
             // groupBox2
             // 
@@ -134,6 +136,7 @@
             this.metroButton5.TabIndex = 2;
             this.metroButton5.Text = "Salvar alteração";
             this.metroButton5.UseSelectable = true;
+            this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
             // metroButton4
             // 
@@ -143,6 +146,7 @@
             this.metroButton4.TabIndex = 1;
             this.metroButton4.Text = "Reativar cadastro";
             this.metroButton4.UseSelectable = true;
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
             // Grid_alunosInativos
             // 
@@ -151,6 +155,7 @@
             this.Grid_alunosInativos.Name = "Grid_alunosInativos";
             this.Grid_alunosInativos.Size = new System.Drawing.Size(359, 161);
             this.Grid_alunosInativos.TabIndex = 0;
+            this.Grid_alunosInativos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_alunosInativos_CellClick);
             // 
             // Alunosfm
             // 
