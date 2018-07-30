@@ -21,6 +21,7 @@ namespace Pj_FrquenciaObjetivo
 
         private void Alunosfm_Load(object sender, EventArgs e)
         {
+           
             // Alunos ativos
 
             if (Controller.L_alunos1.Count() != 0)

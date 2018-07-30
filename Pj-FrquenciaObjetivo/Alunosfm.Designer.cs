@@ -141,6 +141,7 @@
             this.Grid_alunosInativos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grid_alunosInativos.Location = new System.Drawing.Point(6, 58);
             this.Grid_alunosInativos.Name = "Grid_alunosInativos";
+            this.Grid_alunosInativos.ReadOnly = true;
             this.Grid_alunosInativos.Size = new System.Drawing.Size(359, 161);
             this.Grid_alunosInativos.TabIndex = 0;
             this.Grid_alunosInativos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_alunosInativos_CellClick);
