@@ -36,7 +36,6 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.grid_alunosAtivos = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.Grid_alunosInativos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
@@ -118,7 +117,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.metroButton5);
             this.groupBox2.Controls.Add(this.metroButton4);
             this.groupBox2.Controls.Add(this.Grid_alunosInativos);
             this.groupBox2.Controls.Add(this.metroTile1);
@@ -127,16 +125,6 @@
             this.groupBox2.Size = new System.Drawing.Size(376, 255);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            // 
-            // metroButton5
-            // 
-            this.metroButton5.Location = new System.Drawing.Point(121, 225);
-            this.metroButton5.Name = "metroButton5";
-            this.metroButton5.Size = new System.Drawing.Size(106, 23);
-            this.metroButton5.TabIndex = 2;
-            this.metroButton5.Text = "Salvar alteração";
-            this.metroButton5.UseSelectable = true;
-            this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
             // metroButton4
             // 
@@ -186,7 +174,6 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.DataGridView grid_alunosAtivos;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroButton metroButton4;
         private System.Windows.Forms.DataGridView Grid_alunosInativos;
     }
