@@ -73,6 +73,7 @@
             this.gridaponta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridaponta.Location = new System.Drawing.Point(23, 323);
             this.gridaponta.Name = "gridaponta";
+            this.gridaponta.ReadOnly = true;
             this.gridaponta.Size = new System.Drawing.Size(419, 150);
             this.gridaponta.TabIndex = 3;
             // 
