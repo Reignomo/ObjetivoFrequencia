@@ -262,12 +262,12 @@ namespace Pj_FrquenciaObjetivo
                 {                                                           
                           if (ex.Status == "Entrada")
                             {
-                                Apontamento apm = new Apontamento(ex.Matricula_aluno, "Saida", ex.Dia,ex.Mes,ex.Ano, "18", "00", "00", "Exceção");
+                                Apontamento apm = new Apontamento(ex.Matricula_aluno, "Saida", ex.Dia,ex.Mes,ex.Ano, "18", "00", "00", "Exceção (A)");
                                 Controller.CarregaApontamentos(apm);
                             }
                             else
                             {
-                                Apontamento apm = new Apontamento(ex.Matricula_aluno, "Entrada", ex.Dia, ex.Mes, ex.Ano, "07", "00", "00", "Exceção");
+                                Apontamento apm = new Apontamento(ex.Matricula_aluno, "Entrada", ex.Dia, ex.Mes, ex.Ano, "07", "00", "00", "Exceção (A)");
                                 Controller.CarregaApontamentos(apm);
                             }
                         
