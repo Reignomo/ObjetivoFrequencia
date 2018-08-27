@@ -112,6 +112,7 @@
             this.chekd_diretorio.TabIndex = 4;
             this.chekd_diretorio.Text = "Mudar diretório";
             this.chekd_diretorio.UseSelectable = true;
+            this.chekd_diretorio.CheckedChanged += new System.EventHandler(this.chekd_diretorio_CheckedChanged);
             this.chekd_diretorio.Click += new System.EventHandler(this.metroCheckBox1_Click);
             // 
             // metroButton2

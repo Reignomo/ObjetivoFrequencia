@@ -44,6 +44,9 @@
             this.cmb_alunos = new System.Windows.Forms.ComboBox();
             this.Aluno = new System.Windows.Forms.Label();
             this.cmb_matricula = new System.Windows.Forms.ComboBox();
+            this.checkd_ex = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunosNovos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridaponta)).BeginInit();
             this.SuspendLayout();
@@ -108,7 +111,7 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(465, 387);
+            this.metroButton3.Location = new System.Drawing.Point(465, 396);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(147, 16);
             this.metroButton3.TabIndex = 9;
@@ -118,7 +121,7 @@
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(618, 387);
+            this.metroButton4.Location = new System.Drawing.Point(618, 396);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(57, 16);
             this.metroButton4.TabIndex = 10;
@@ -167,7 +170,7 @@
             // 
             this.cmb_alunos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_alunos.FormattingEnabled = true;
-            this.cmb_alunos.Location = new System.Drawing.Point(465, 360);
+            this.cmb_alunos.Location = new System.Drawing.Point(465, 369);
             this.cmb_alunos.Name = "cmb_alunos";
             this.cmb_alunos.Size = new System.Drawing.Size(147, 21);
             this.cmb_alunos.TabIndex = 16;
@@ -175,7 +178,7 @@
             // Aluno
             // 
             this.Aluno.AutoSize = true;
-            this.Aluno.Location = new System.Drawing.Point(546, 341);
+            this.Aluno.Location = new System.Drawing.Point(521, 353);
             this.Aluno.Name = "Aluno";
             this.Aluno.Size = new System.Drawing.Size(34, 13);
             this.Aluno.TabIndex = 17;
@@ -186,16 +189,47 @@
             this.cmb_matricula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_matricula.Enabled = false;
             this.cmb_matricula.FormattingEnabled = true;
-            this.cmb_matricula.Location = new System.Drawing.Point(618, 360);
+            this.cmb_matricula.Location = new System.Drawing.Point(618, 369);
             this.cmb_matricula.Name = "cmb_matricula";
             this.cmb_matricula.Size = new System.Drawing.Size(57, 21);
             this.cmb_matricula.TabIndex = 18;
+            // 
+            // checkd_ex
+            // 
+            this.checkd_ex.AutoSize = true;
+            this.checkd_ex.Location = new System.Drawing.Point(575, 340);
+            this.checkd_ex.Name = "checkd_ex";
+            this.checkd_ex.Size = new System.Drawing.Size(100, 17);
+            this.checkd_ex.TabIndex = 19;
+            this.checkd_ex.Text = "Listar exceções";
+            this.checkd_ex.UseVisualStyleBackColor = true;
+            this.checkd_ex.Click += new System.EventHandler(this.checkBox1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Yellow;
+            this.panel1.Location = new System.Drawing.Point(23, 479);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(13, 11);
+            this.panel1.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(42, 479);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Apontamento artificial (gerado pelo sistema)";
             // 
             // registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 486);
+            this.ClientSize = new System.Drawing.Size(684, 499);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.checkd_ex);
             this.Controls.Add(this.cmb_matricula);
             this.Controls.Add(this.Aluno);
             this.Controls.Add(this.cmb_alunos);
@@ -238,5 +272,8 @@
         private System.Windows.Forms.ComboBox cmb_alunos;
         private System.Windows.Forms.Label Aluno;
         private System.Windows.Forms.ComboBox cmb_matricula;
+        private System.Windows.Forms.CheckBox checkd_ex;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

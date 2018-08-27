@@ -578,5 +578,10 @@ namespace Pj_FrquenciaObjetivo
         {
 
         }
+
+        private void chekd_diretorio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

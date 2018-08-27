@@ -567,9 +567,14 @@ private void metroButton1_Click(object sender, EventArgs e)
                 }
 
             }
-
-            Controller.GetApontamentos(dia, mes, ano, cmb_matricula.Text);
-
+            if (dtm_data.Enabled == true)
+            {
+                Controller.GetApontamentos(dia, mes, ano, cmb_matricula.Text);
+            }
+            else
+            {
+                Controller.getExByid(cmb_matricula.Text);
+            }
             foreach (Apontamento aponta in Controller.L_apontamento1)
             {
                 try
@@ -589,6 +594,18 @@ private void metroButton1_Click(object sender, EventArgs e)
                 }
             }
 
+        }
+
+        private void checkBox1_Click(object sender, EventArgs e)
+        {
+            if (checkd_ex.Checked == true)
+            {
+                dtm_data.Enabled = false;
+            }
+            else
+            {
+                dtm_data.Enabled = true;
+            }
         }
     }
 }

@@ -44,19 +44,19 @@ namespace Pj_FrquenciaObjetivo
 
         public static void CarregaApontamentos(Apontamento Aponta)
         {
-            
-                L_apontamento1.Add(Aponta);
-            
-           
+
+            L_apontamento1.Add(Aponta);
+
+
 
         }
 
-        
+
 
         public static int TrataEx()
         {
 
-           
+
             bool achou = false;
             int contador = 0;
             int total = Controller.L_apontamento1.Count() - 1;
@@ -98,22 +98,22 @@ namespace Pj_FrquenciaObjetivo
                     }
                     else if (achou == false && total == contador)
                     {
-                        ap.Tipo = "Exceção";                      
-                        L_execoes.Add(ap);                  
+                        ap.Tipo = "Exceção";
+                        L_execoes.Add(ap);
                         L_execoes.Count();
                         achou = false;
                         contador = 0;
-                       
+
                         break;
                     }
                     contador++;
 
 
-                    
 
 
-                    }             
+
                 }
+            }
             // removendo as exceções dos apotamentos
 
 
@@ -175,7 +175,7 @@ namespace Pj_FrquenciaObjetivo
 
         public static int SetDadosBanco()
         {
-            int  qtNovos=0, linhas=0;
+            int qtNovos = 0, linhas = 0;
             string connString = "Server=USUARIO-PC\\SQLEXPRESS; Database=objetivo; Integrated Security=True;";
             SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
             conexao.Open(); // abre a conexão com o banco  
@@ -184,12 +184,12 @@ namespace Pj_FrquenciaObjetivo
                 // adicionando alunos
                 foreach (Apontamento ap in L_apontamento1)
                 {
-                    SqlCommand select = new SqlCommand("SELECT Matricula From Alunos Where Matricula='"+ap.Matricula_aluno+"'",conexao);
+                    SqlCommand select = new SqlCommand("SELECT Matricula From Alunos Where Matricula='" + ap.Matricula_aluno + "'", conexao);
 
 
 
                     SqlDataReader resultado = select.ExecuteReader();
-                   
+
 
                     while (resultado.Read())
                     {
@@ -197,7 +197,7 @@ namespace Pj_FrquenciaObjetivo
                     }
                     resultado.Close();
 
-                    if (linhas==0)
+                    if (linhas == 0)
                     {
                         qtNovos++;
                         SqlCommand cmd = new SqlCommand("INSERT INTO Alunos values ( '" + ap.Matricula_aluno + "','','ATIVO')", conexao); /*cmd possui mais de um parâmetro, neste caso coloquei o comando SQL "SELECT * FROM tabela" que irá selecionar tudo(*) de tabela, o segundo parâmetro indica onde o banco está conectado,ou seja se estamos selecionando informações do banco precisamos dizer onde ele está localizado */
@@ -207,16 +207,16 @@ namespace Pj_FrquenciaObjetivo
 
 
 
-                   
+
                 }
                 // Adicionando apontamentos 
-                int linhasR=0;
-                foreach(Apontamento aponta in L_apontamento1)
+                int linhasR = 0;
+                foreach (Apontamento aponta in L_apontamento1)
                 {
 
                     SqlCommand verificaS = new SqlCommand("SELECT * FROM  Apontamento Where PK_Matricula='" + aponta.Matricula_aluno + "' AND  status_apontamento='" +
-                        aponta.Status+"' AND  dia='"+aponta.Dia+"' AND  mes='"+aponta.Mes+"' AND  ano='"+aponta.Ano+"' AND  hora='"
-                        +aponta.Hora+"' AND minuto='"+aponta.Minuto+"' AND  segundo='"+aponta.Segundo+"' AND  tipo='"+aponta.Tipo+"'", conexao);
+                        aponta.Status + "' AND  dia='" + aponta.Dia + "' AND  mes='" + aponta.Mes + "' AND  ano='" + aponta.Ano + "' AND  hora='"
+                        + aponta.Hora + "' AND minuto='" + aponta.Minuto + "' AND  segundo='" + aponta.Segundo + "' AND  tipo='" + aponta.Tipo + "'", conexao);
 
 
 
@@ -230,8 +230,8 @@ namespace Pj_FrquenciaObjetivo
 
                     if (linhasR == 0)
                     {
-                      SqlCommand cmd = new SqlCommand("INSERT INTO Apontamento values ( '" + aponta.Matricula_aluno + "','"+aponta.Status+"','"+aponta.Dia+"','"+aponta.Mes+"','"+aponta.Ano+"','"+aponta.Hora+"','"+aponta.Minuto+"','"+aponta.Segundo+"','"+aponta.Tipo+"')", conexao); /*cmd possui mais de um parâmetro, neste caso coloquei o comando SQL "SELECT * FROM tabela" que irá selecionar tudo(*) de tabela, o segundo parâmetro indica onde o banco está conectado,ou seja se estamos selecionando informações do banco precisamos dizer onde ele está localizado */
-                      cmd.ExecuteNonQuery(); // executa cmd
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Apontamento values ( '" + aponta.Matricula_aluno + "','" + aponta.Status + "','" + aponta.Dia + "','" + aponta.Mes + "','" + aponta.Ano + "','" + aponta.Hora + "','" + aponta.Minuto + "','" + aponta.Segundo + "','" + aponta.Tipo + "')", conexao); /*cmd possui mais de um parâmetro, neste caso coloquei o comando SQL "SELECT * FROM tabela" que irá selecionar tudo(*) de tabela, o segundo parâmetro indica onde o banco está conectado,ou seja se estamos selecionando informações do banco precisamos dizer onde ele está localizado */
+                        cmd.ExecuteNonQuery(); // executa cmd
 
                     }
                     linhasR = 0;
@@ -242,18 +242,18 @@ namespace Pj_FrquenciaObjetivo
                 L_apontamento.Count();
                 return qtNovos;
             }
-            
+
 
             catch (Exception e)
             {
-                MessageBox.Show("erro"+e);
+                MessageBox.Show("erro" + e);
                 return qtNovos;
             }
-             finally
+            finally
             {
                 conexao.Close();
             }
-           
+
 
 
         }                  /*Pronto após o cmd.ExecuteNonQuery(); selecionamos tudo o que tinha dentro do banco, agora os passos seguintes irão exibir as informações para que o usuário possa vê-las    */
@@ -285,7 +285,7 @@ namespace Pj_FrquenciaObjetivo
 
 
                             L_alunos1.Add(Al);
-                           
+
                         }
 
                     }
@@ -293,7 +293,7 @@ namespace Pj_FrquenciaObjetivo
 
             }
 
-        
+
 
 
 
@@ -314,29 +314,29 @@ namespace Pj_FrquenciaObjetivo
             string connString = "Server=USUARIO-PC\\SQLEXPRESS; Database=objetivo; Integrated Security=True;";
             SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
             conexao.Open();
-            
 
-                try
+
+            try
+            {
+                foreach (Aluno al in L_alunos1)
                 {
-                    foreach (Aluno al in L_alunos1)
-                    {
-                        SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Nome_aluno ='" + al.Nome1 + "' WHERE Matricula='" + al.Matricula1 + "'", conexao);
+                    SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Nome_aluno ='" + al.Nome1 + "' WHERE Matricula='" + al.Matricula1 + "'", conexao);
 
-                        cmd.ExecuteNonQuery(); // executa cmd
-                    }
+                    cmd.ExecuteNonQuery(); // executa cmd
                 }
+            }
 
-                catch(Exception e )
-                {
-                    MessageBox.Show("Erro ao tentar aterar dados dos alunos, por favor contate ao adiministrador :"+e);
+            catch (Exception e)
+            {
+                MessageBox.Show("Erro ao tentar aterar dados dos alunos, por favor contate ao adiministrador :" + e);
 
-                }
+            }
 
-                finally
-                {
-                    conexao.Close();
-                }
-            
+            finally
+            {
+                conexao.Close();
+            }
+
         }
 
         public static void ExcluiAluno(string matricula)
@@ -347,16 +347,16 @@ namespace Pj_FrquenciaObjetivo
 
             try
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Status_al='INATIVO' WHERE Matricula='" +matricula + "'", conexao);
+                SqlCommand cmd = new SqlCommand("UPDATE Alunos SET Status_al='INATIVO' WHERE Matricula='" + matricula + "'", conexao);
 
                 cmd.ExecuteNonQuery();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
-                MessageBox.Show("Erro ao tentar excluir aluno, por favor contate o administrador"+e);
+                MessageBox.Show("Erro ao tentar excluir aluno, por favor contate o administrador" + e);
             }
-            
+
             finally
             {
                 conexao.Close();
@@ -402,7 +402,7 @@ namespace Pj_FrquenciaObjetivo
 
 
 
-                SqlCommand query = new SqlCommand("Select * from  Apontamento Where dia='"+dia+"' AND mes='"+mes+"' AND ano='"+ano+"' AND PK_Matricula='"+matricula+"'");
+                SqlCommand query = new SqlCommand("Select * from  Apontamento Where dia='" + dia + "' AND mes='" + mes + "' AND ano='" + ano + "' AND PK_Matricula='" + matricula + "'");
                 query.Connection = conexao;
 
                 using (SqlDataReader reader = query.ExecuteReader())
@@ -415,7 +415,7 @@ namespace Pj_FrquenciaObjetivo
                     {
                         while (reader.Read())
                         {
-                          Apontamento Aponta = new Apontamento(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8));
+                            Apontamento Aponta = new Apontamento(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8));
 
 
                             L_apontamento1.Add(Aponta);
@@ -448,21 +448,21 @@ namespace Pj_FrquenciaObjetivo
             int contador2 = 0;
             if (Controller.L_alunos1.Count() != 0)
             {
-               
-                foreach(Aluno alunosx in L_alunos1)
+
+                foreach (Aluno alunosx in L_alunos1)
                 {
 
-                    if(alunosx.Nome1=="" || alunosx.Status1!="ATIVO")
+                    if (alunosx.Nome1 == "" || alunosx.Status1 != "ATIVO")
                     {
                         exclui[contador] = contador2;
                         contador++;
                         //L_alunos1.Remove(alunosx);
-                       
+
                     }
                     contador2++;
                 }
-                contador = contador- 1;
-                while (contador>=0)
+                contador = contador - 1;
+                while (contador >= 0)
                 {
                     L_alunos1.RemoveAt(exclui[contador]);
                     contador--;
@@ -513,7 +513,7 @@ namespace Pj_FrquenciaObjetivo
 
             catch (Exception e)
             {
-                MessageBox.Show("Erro ao tentar carregador os dados or favor contate o administrador" + e);
+                MessageBox.Show("Erro ao tentar carregador os dados por favor contate o administrador" + e);
             }
             finally
             {
@@ -558,12 +558,53 @@ namespace Pj_FrquenciaObjetivo
 
         }
 
+        public static void getExByid(string matricula)
+        {
+            string connString = "Server=USUARIO-PC\\SQLEXPRESS; Database=objetivo; Integrated Security=True;";
+            SqlConnection conexao = new SqlConnection(connString); /* conexao irá conectar o C# ao banco de dados */
+            conexao.Open();
+            try
+            {
+
+                
+                SqlCommand query = new SqlCommand("Select * from Apontamento Where Pk_matricula='"+matricula+"' AND tipo='Exceção'");
+                query.Connection = conexao;
+
+                using (SqlDataReader reader = query.ExecuteReader())
+                {
+                if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Apontamento Aponta = new Apontamento(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8));
 
 
+                            L_apontamento1.Add(Aponta);
 
+                        }
 
+                    }
+                }
+
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show("Erro ao tentar carregador os dados por favor contate o administrador" + e);
+            }
+            finally
+            {
+                conexao.Close();
+            }
 
         }
 
+
+
+
+
+
+
+    }
 
 }
