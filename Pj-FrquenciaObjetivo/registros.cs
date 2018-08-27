@@ -579,12 +579,9 @@ private void metroButton1_Click(object sender, EventArgs e)
             {
                 try
                 {
-
-
-
-                    gridaponta.Rows.Add(aponta.Matricula_aluno, aponta.Status, aponta.Dia, aponta.Mes, aponta.Ano, aponta.Hora, aponta.Minuto, aponta.Segundo, aponta.Tipo);
-
-
+              
+                  gridaponta.Rows.Add(aponta.Matricula_aluno, aponta.Status, aponta.Dia, aponta.Mes, aponta.Ano, aponta.Hora, aponta.Minuto, aponta.Segundo, aponta.Tipo);
+                   
 
                 }
 
@@ -605,6 +602,17 @@ private void metroButton1_Click(object sender, EventArgs e)
             else
             {
                 dtm_data.Enabled = true;
+            }
+        }
+
+        private void gridaponta_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value != null && e.Value.Equals("Exceção (A)"))
+
+            {
+
+                gridaponta.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+
             }
         }
     }

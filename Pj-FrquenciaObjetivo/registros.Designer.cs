@@ -79,6 +79,7 @@
             this.gridaponta.ReadOnly = true;
             this.gridaponta.Size = new System.Drawing.Size(419, 150);
             this.gridaponta.TabIndex = 3;
+            this.gridaponta.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gridaponta_CellFormatting);
             // 
             // metroTile2
             // 

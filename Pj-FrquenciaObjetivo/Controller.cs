@@ -402,7 +402,7 @@ namespace Pj_FrquenciaObjetivo
 
 
 
-                SqlCommand query = new SqlCommand("Select * from  Apontamento Where dia='" + dia + "' AND mes='" + mes + "' AND ano='" + ano + "' AND PK_Matricula='" + matricula + "'");
+                SqlCommand query = new SqlCommand("Select * from  Apontamento Where dia="+dia+" AND mes="+mes+" AND ano="+ano+" AND PK_Matricula="+matricula+"");
                 query.Connection = conexao;
 
                 using (SqlDataReader reader = query.ExecuteReader())
@@ -567,7 +567,7 @@ namespace Pj_FrquenciaObjetivo
             {
 
                 
-                SqlCommand query = new SqlCommand("Select * from Apontamento Where Pk_matricula='"+matricula+ "' AND tipo='Exceção' OR tipo='Exceção (A)'");
+                SqlCommand query = new SqlCommand("Select * from Apontamento Where Pk_matricula='"+matricula+ "' AND tipo LIKE '%Exceção%'");
                 query.Connection = conexao;
 
                 using (SqlDataReader reader = query.ExecuteReader())
