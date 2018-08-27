@@ -218,11 +218,11 @@ private void metroButton1_Click(object sender, EventArgs e)
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            
-            int qtd = Controller.L_alunos1.Count() - 1, cont = 0;
+            Controller.GetAlunos();
+            int qtd = Controller.L_alunos1.Count(), cont = 0;
             try
           {
-                Controller.GetAlunos();
+                
                 // Salvando dados alterados no grid
                 foreach (Aluno al in Controller.L_alunos1)
                 {
