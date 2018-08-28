@@ -32,7 +32,8 @@ INSERT INTO Alunos values ( 'ap.Mr','')
 
 
 SELECT Matricula From Alunos Where Matricula = '00099'
-SELECT * from Apontamento 
+SELECT * from Apontamento where PK_Matricula=105 AND dia=01 AND mes = 08
 
-Select * from alunos
+Select * from Apontamento Where Pk_matricula=105 AND tipo LIKE '%Exceção%'
 
+Select * from  Apontamento
