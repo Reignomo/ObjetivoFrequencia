@@ -286,20 +286,11 @@ namespace Pj_FrquenciaObjetivo
                 lb_aguarde.Visible = false;
             }
 
-            if (Controller.L_apontamento1.Count() != 0)
-            {
-                for (int i = Controller.L_apontamento1.Count - 1; i >= 0; i--)
-                {
-
-                    Controller.L_apontamento1.RemoveAt(i);
-
-                }
-
-            }
+           
             //Criando o txt com as exceções
             try
             {
-                Controller.GetAllApontamentos();
+                
                 ////declarando a variavel do tipo StreamWriter para 
                 //abrir ou criar um arquivo para escrita 
                 StreamWriter arq;

@@ -36,13 +36,13 @@
             this.tb_caminho = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lb_aguarde = new System.Windows.Forms.Label();
             this.tb_qtEntrada = new MetroFramework.Controls.MetroTextBox();
             this.tb_saida = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.tb_qtex = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.lb_aguarde = new System.Windows.Forms.Label();
             this.btn_voltar = new MetroFramework.Controls.MetroButton();
             this.grid = new System.Windows.Forms.DataGridView();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -59,19 +59,13 @@
             this.tb_dia = new System.Windows.Forms.TextBox();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.metroTile1.SuspendLayout();
             this.title_mes.SuspendLayout();
             this.title_ano.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -176,6 +170,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.metroButton1);
             this.groupBox2.Controls.Add(this.tb_qtEntrada);
             this.groupBox2.Controls.Add(this.tb_saida);
             this.groupBox2.Controls.Add(this.metroLabel4);
@@ -184,21 +179,11 @@
             this.groupBox2.Controls.Add(this.metroLabel3);
             this.groupBox2.Location = new System.Drawing.Point(13, 241);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(243, 181);
+            this.groupBox2.Size = new System.Drawing.Size(429, 181);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Registros";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // lb_aguarde
-            // 
-            this.lb_aguarde.AutoSize = true;
-            this.lb_aguarde.Location = new System.Drawing.Point(81, 443);
-            this.lb_aguarde.Name = "lb_aguarde";
-            this.lb_aguarde.Size = new System.Drawing.Size(303, 13);
-            this.lb_aguarde.TabIndex = 8;
-            this.lb_aguarde.Text = "Por favor aguarde essa operação pode levar alguns minutos ...";
-            this.lb_aguarde.Visible = false;
             // 
             // tb_qtEntrada
             // 
@@ -216,7 +201,7 @@
             this.tb_qtEntrada.CustomButton.Visible = false;
             this.tb_qtEntrada.Enabled = false;
             this.tb_qtEntrada.Lines = new string[0];
-            this.tb_qtEntrada.Location = new System.Drawing.Point(175, 58);
+            this.tb_qtEntrada.Location = new System.Drawing.Point(271, 35);
             this.tb_qtEntrada.MaxLength = 32767;
             this.tb_qtEntrada.Name = "tb_qtEntrada";
             this.tb_qtEntrada.PasswordChar = '\0';
@@ -247,7 +232,7 @@
             this.tb_saida.CustomButton.Visible = false;
             this.tb_saida.Enabled = false;
             this.tb_saida.Lines = new string[0];
-            this.tb_saida.Location = new System.Drawing.Point(175, 87);
+            this.tb_saida.Location = new System.Drawing.Point(271, 67);
             this.tb_saida.MaxLength = 32767;
             this.tb_saida.Name = "tb_saida";
             this.tb_saida.PasswordChar = '\0';
@@ -265,7 +250,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(19, 87);
+            this.metroLabel4.Location = new System.Drawing.Point(118, 69);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(139, 19);
             this.metroLabel4.TabIndex = 5;
@@ -275,7 +260,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(19, 57);
+            this.metroLabel2.Location = new System.Drawing.Point(118, 39);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(149, 19);
             this.metroLabel2.TabIndex = 4;
@@ -297,7 +282,7 @@
             this.tb_qtex.CustomButton.Visible = false;
             this.tb_qtex.Enabled = false;
             this.tb_qtex.Lines = new string[0];
-            this.tb_qtex.Location = new System.Drawing.Point(175, 114);
+            this.tb_qtex.Location = new System.Drawing.Point(271, 96);
             this.tb_qtex.MaxLength = 32767;
             this.tb_qtex.Name = "tb_qtex";
             this.tb_qtex.PasswordChar = '\0';
@@ -315,11 +300,21 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(19, 118);
+            this.metroLabel3.Location = new System.Drawing.Point(118, 100);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(150, 19);
             this.metroLabel3.TabIndex = 0;
             this.metroLabel3.Text = "Quantidade de exeções:";
+            // 
+            // lb_aguarde
+            // 
+            this.lb_aguarde.AutoSize = true;
+            this.lb_aguarde.Location = new System.Drawing.Point(81, 443);
+            this.lb_aguarde.Name = "lb_aguarde";
+            this.lb_aguarde.Size = new System.Drawing.Size(303, 13);
+            this.lb_aguarde.TabIndex = 8;
+            this.lb_aguarde.Text = "Por favor aguarde essa operação pode levar alguns minutos ...";
+            this.lb_aguarde.Visible = false;
             // 
             // btn_voltar
             // 
@@ -498,61 +493,15 @@
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click_1);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Controls.Add(this.metroButton1);
-            this.groupBox3.Location = new System.Drawing.Point(265, 241);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(177, 181);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Arquivo";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(21, 38);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(132, 20);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(21, 91);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(132, 20);
-            this.dateTimePicker2.TabIndex = 1;
-            // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(21, 133);
+            this.metroButton1.Location = new System.Drawing.Point(118, 125);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(134, 23);
+            this.metroButton1.Size = new System.Drawing.Size(205, 23);
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "Tratar exeções";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "De";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Até";
             // 
             // TratarDados
             // 
@@ -560,7 +509,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 739);
             this.Controls.Add(this.lb_aguarde);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.tb_dia);
@@ -591,8 +539,6 @@
             this.title_mes.PerformLayout();
             this.title_ano.ResumeLayout(false);
             this.title_ano.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,11 +577,6 @@
         private System.Windows.Forms.ProgressBar pgb_coleta;
         private System.Windows.Forms.Label lb_carregando;
         private System.Windows.Forms.Label lb_aguarde;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
     }
 }
