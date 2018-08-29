@@ -25,5 +25,10 @@ namespace Pj_FrquenciaObjetivo
 
             this.reportViewer1.RefreshReport();
         }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

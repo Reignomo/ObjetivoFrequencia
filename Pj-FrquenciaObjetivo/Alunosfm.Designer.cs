@@ -38,7 +38,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.Grid_alunosInativos = new System.Windows.Forms.DataGridView();
-            this.btn_faltas = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_alunosAtivos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -77,7 +76,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btn_faltas);
             this.groupBox1.Controls.Add(this.metroButton3);
             this.groupBox1.Controls.Add(this.metroButton2);
             this.groupBox1.Controls.Add(this.metroTile2);
@@ -148,16 +146,6 @@
             this.Grid_alunosInativos.TabIndex = 0;
             this.Grid_alunosInativos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_alunosInativos_CellClick);
             // 
-            // btn_faltas
-            // 
-            this.btn_faltas.Location = new System.Drawing.Point(217, 235);
-            this.btn_faltas.Name = "btn_faltas";
-            this.btn_faltas.Size = new System.Drawing.Size(148, 23);
-            this.btn_faltas.TabIndex = 7;
-            this.btn_faltas.Text = "Gerar relatório de faltas";
-            this.btn_faltas.UseSelectable = true;
-            this.btn_faltas.Click += new System.EventHandler(this.btn_faltas_Click);
-            // 
             // Alunosfm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +177,5 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroButton metroButton4;
         private System.Windows.Forms.DataGridView Grid_alunosInativos;
-        private MetroFramework.Controls.MetroButton btn_faltas;
     }
 }

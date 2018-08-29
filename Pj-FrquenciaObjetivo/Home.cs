@@ -68,5 +68,13 @@ namespace Pj_FrquenciaObjetivo
             this.Hide(); // use dessa maneira.
             f1.ShowDialog();
         }
+
+        private void relatórioDeFaltasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Relatorio_faltas rf = new Relatorio_faltas();
+            this.Hide(); // use dessa maneira.
+            rf.ShowDialog();
+        }
     }
 }
