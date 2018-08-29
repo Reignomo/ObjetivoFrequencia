@@ -42,7 +42,6 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.tb_qtex = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.btn_voltar = new MetroFramework.Controls.MetroButton();
             this.grid = new System.Windows.Forms.DataGridView();
@@ -60,12 +59,19 @@
             this.tb_dia = new System.Windows.Forms.TextBox();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.metroTile1.SuspendLayout();
             this.title_mes.SuspendLayout();
             this.title_ano.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -76,9 +82,9 @@
             this.groupBox1.Controls.Add(this.metroButton2);
             this.groupBox1.Controls.Add(this.tb_caminho);
             this.groupBox1.Controls.Add(this.metroLabel1);
-            this.groupBox1.Location = new System.Drawing.Point(81, 73);
+            this.groupBox1.Location = new System.Drawing.Point(13, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(313, 162);
+            this.groupBox1.Size = new System.Drawing.Size(429, 162);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Coletando dados";
@@ -87,7 +93,7 @@
             // lb_carregando
             // 
             this.lb_carregando.AutoSize = true;
-            this.lb_carregando.Location = new System.Drawing.Point(118, 119);
+            this.lb_carregando.Location = new System.Drawing.Point(185, 118);
             this.lb_carregando.Name = "lb_carregando";
             this.lb_carregando.Size = new System.Drawing.Size(71, 13);
             this.lb_carregando.TabIndex = 6;
@@ -96,7 +102,7 @@
             // 
             // pgb_coleta
             // 
-            this.pgb_coleta.Location = new System.Drawing.Point(85, 135);
+            this.pgb_coleta.Location = new System.Drawing.Point(152, 134);
             this.pgb_coleta.Name = "pgb_coleta";
             this.pgb_coleta.Size = new System.Drawing.Size(120, 12);
             this.pgb_coleta.TabIndex = 5;
@@ -106,7 +112,7 @@
             // chekd_diretorio
             // 
             this.chekd_diretorio.AutoSize = true;
-            this.chekd_diretorio.Location = new System.Drawing.Point(149, 73);
+            this.chekd_diretorio.Location = new System.Drawing.Point(203, 89);
             this.chekd_diretorio.Name = "chekd_diretorio";
             this.chekd_diretorio.Size = new System.Drawing.Size(106, 15);
             this.chekd_diretorio.TabIndex = 4;
@@ -117,11 +123,11 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(173, 94);
+            this.metroButton2.Location = new System.Drawing.Point(315, 60);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(82, 22);
+            this.metroButton2.Size = new System.Drawing.Size(85, 23);
             this.metroButton2.TabIndex = 3;
-            this.metroButton2.Text = "Coletar";
+            this.metroButton2.Text = "Coletar dados";
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
@@ -131,7 +137,7 @@
             // 
             // 
             this.tb_caminho.CustomButton.Image = null;
-            this.tb_caminho.CustomButton.Location = new System.Drawing.Point(148, 1);
+            this.tb_caminho.CustomButton.Location = new System.Drawing.Point(201, 1);
             this.tb_caminho.CustomButton.Name = "";
             this.tb_caminho.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_caminho.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -142,7 +148,7 @@
             this.tb_caminho.Enabled = false;
             this.tb_caminho.Lines = new string[] {
         "C:\\\\Apontamento\\\\Apontamento.txt"};
-            this.tb_caminho.Location = new System.Drawing.Point(85, 44);
+            this.tb_caminho.Location = new System.Drawing.Point(86, 60);
             this.tb_caminho.MaxLength = 32767;
             this.tb_caminho.Name = "tb_caminho";
             this.tb_caminho.PasswordChar = '\0';
@@ -151,7 +157,7 @@
             this.tb_caminho.SelectionLength = 0;
             this.tb_caminho.SelectionStart = 0;
             this.tb_caminho.ShortcutsEnabled = true;
-            this.tb_caminho.Size = new System.Drawing.Size(170, 23);
+            this.tb_caminho.Size = new System.Drawing.Size(223, 23);
             this.tb_caminho.TabIndex = 2;
             this.tb_caminho.Text = "C:\\\\Apontamento\\\\Apontamento.txt";
             this.tb_caminho.UseSelectable = true;
@@ -162,7 +168,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(15, 44);
+            this.metroLabel1.Location = new System.Drawing.Point(18, 64);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(64, 19);
             this.metroLabel1.TabIndex = 0;
@@ -170,26 +176,24 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lb_aguarde);
             this.groupBox2.Controls.Add(this.tb_qtEntrada);
             this.groupBox2.Controls.Add(this.tb_saida);
             this.groupBox2.Controls.Add(this.metroLabel4);
             this.groupBox2.Controls.Add(this.metroLabel2);
             this.groupBox2.Controls.Add(this.tb_qtex);
-            this.groupBox2.Controls.Add(this.metroButton1);
             this.groupBox2.Controls.Add(this.metroLabel3);
-            this.groupBox2.Location = new System.Drawing.Point(81, 241);
+            this.groupBox2.Location = new System.Drawing.Point(13, 241);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(313, 181);
+            this.groupBox2.Size = new System.Drawing.Size(243, 181);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Exeções";
+            this.groupBox2.Text = "Registros";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // lb_aguarde
             // 
             this.lb_aguarde.AutoSize = true;
-            this.lb_aguarde.Location = new System.Drawing.Point(5, 165);
+            this.lb_aguarde.Location = new System.Drawing.Point(81, 443);
             this.lb_aguarde.Name = "lb_aguarde";
             this.lb_aguarde.Size = new System.Drawing.Size(303, 13);
             this.lb_aguarde.TabIndex = 8;
@@ -212,7 +216,7 @@
             this.tb_qtEntrada.CustomButton.Visible = false;
             this.tb_qtEntrada.Enabled = false;
             this.tb_qtEntrada.Lines = new string[0];
-            this.tb_qtEntrada.Location = new System.Drawing.Point(214, 37);
+            this.tb_qtEntrada.Location = new System.Drawing.Point(175, 58);
             this.tb_qtEntrada.MaxLength = 32767;
             this.tb_qtEntrada.Name = "tb_qtEntrada";
             this.tb_qtEntrada.PasswordChar = '\0';
@@ -243,7 +247,7 @@
             this.tb_saida.CustomButton.Visible = false;
             this.tb_saida.Enabled = false;
             this.tb_saida.Lines = new string[0];
-            this.tb_saida.Location = new System.Drawing.Point(214, 66);
+            this.tb_saida.Location = new System.Drawing.Point(175, 87);
             this.tb_saida.MaxLength = 32767;
             this.tb_saida.Name = "tb_saida";
             this.tb_saida.PasswordChar = '\0';
@@ -261,7 +265,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(58, 66);
+            this.metroLabel4.Location = new System.Drawing.Point(19, 87);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(139, 19);
             this.metroLabel4.TabIndex = 5;
@@ -271,7 +275,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(58, 36);
+            this.metroLabel2.Location = new System.Drawing.Point(19, 57);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(149, 19);
             this.metroLabel2.TabIndex = 4;
@@ -293,7 +297,7 @@
             this.tb_qtex.CustomButton.Visible = false;
             this.tb_qtex.Enabled = false;
             this.tb_qtex.Lines = new string[0];
-            this.tb_qtex.Location = new System.Drawing.Point(214, 93);
+            this.tb_qtex.Location = new System.Drawing.Point(175, 114);
             this.tb_qtex.MaxLength = 32767;
             this.tb_qtex.Name = "tb_qtex";
             this.tb_qtex.PasswordChar = '\0';
@@ -308,20 +312,10 @@
             this.tb_qtex.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tb_qtex.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(84, 139);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(134, 23);
-            this.metroButton1.TabIndex = 2;
-            this.metroButton1.Text = "Tratar exeções";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(58, 97);
+            this.metroLabel3.Location = new System.Drawing.Point(19, 118);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(150, 19);
             this.metroLabel3.TabIndex = 0;
@@ -329,7 +323,7 @@
             // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(265, 693);
+            this.btn_voltar.Location = new System.Drawing.Point(265, 712);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(57, 23);
             this.btn_voltar.TabIndex = 4;
@@ -340,7 +334,7 @@
             // grid
             // 
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid.Location = new System.Drawing.Point(13, 440);
+            this.grid.Location = new System.Drawing.Point(13, 459);
             this.grid.Name = "grid";
             this.grid.Size = new System.Drawing.Size(434, 194);
             this.grid.TabIndex = 8;
@@ -348,7 +342,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(13, 418);
+            this.metroLabel5.Location = new System.Drawing.Point(13, 437);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(62, 19);
             this.metroLabel5.TabIndex = 9;
@@ -358,7 +352,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(13, 664);
+            this.metroLabel6.Location = new System.Drawing.Point(13, 683);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(42, 19);
             this.metroLabel6.TabIndex = 10;
@@ -367,7 +361,7 @@
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(328, 662);
+            this.metroButton4.Location = new System.Drawing.Point(328, 681);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(114, 23);
             this.metroButton4.TabIndex = 12;
@@ -379,7 +373,7 @@
             // 
             this.metroTile1.ActiveControl = null;
             this.metroTile1.Controls.Add(this.tile_dia);
-            this.metroTile1.Location = new System.Drawing.Point(51, 640);
+            this.metroTile1.Location = new System.Drawing.Point(51, 659);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(108, 21);
             this.metroTile1.TabIndex = 16;
@@ -399,7 +393,7 @@
             // 
             this.title_mes.ActiveControl = null;
             this.title_mes.Controls.Add(this.metroLabel8);
-            this.title_mes.Location = new System.Drawing.Point(165, 640);
+            this.title_mes.Location = new System.Drawing.Point(165, 659);
             this.title_mes.Name = "title_mes";
             this.title_mes.Size = new System.Drawing.Size(91, 21);
             this.title_mes.TabIndex = 17;
@@ -420,7 +414,7 @@
             // 
             this.title_ano.ActiveControl = null;
             this.title_ano.Controls.Add(this.metroLabel9);
-            this.title_ano.Location = new System.Drawing.Point(262, 640);
+            this.title_ano.Location = new System.Drawing.Point(262, 659);
             this.title_ano.Name = "title_ano";
             this.title_ano.Size = new System.Drawing.Size(60, 21);
             this.title_ano.TabIndex = 18;
@@ -454,7 +448,7 @@
             "Outubro",
             "Novembro",
             "Dezembro "});
-            this.cmb_mes.Location = new System.Drawing.Point(165, 664);
+            this.cmb_mes.Location = new System.Drawing.Point(165, 683);
             this.cmb_mes.Name = "cmb_mes";
             this.cmb_mes.Size = new System.Drawing.Size(91, 21);
             this.cmb_mes.TabIndex = 19;
@@ -471,14 +465,14 @@
             "2020",
             "2021",
             "2022"});
-            this.cmb_ano.Location = new System.Drawing.Point(262, 664);
+            this.cmb_ano.Location = new System.Drawing.Point(262, 683);
             this.cmb_ano.Name = "cmb_ano";
             this.cmb_ano.Size = new System.Drawing.Size(60, 21);
             this.cmb_ano.TabIndex = 20;
             // 
             // tb_dia
             // 
-            this.tb_dia.Location = new System.Drawing.Point(51, 664);
+            this.tb_dia.Location = new System.Drawing.Point(51, 683);
             this.tb_dia.Name = "tb_dia";
             this.tb_dia.Size = new System.Drawing.Size(107, 20);
             this.tb_dia.TabIndex = 21;
@@ -486,7 +480,7 @@
             // 
             // metroButton5
             // 
-            this.metroButton5.Location = new System.Drawing.Point(328, 693);
+            this.metroButton5.Location = new System.Drawing.Point(328, 712);
             this.metroButton5.Name = "metroButton5";
             this.metroButton5.Size = new System.Drawing.Size(114, 23);
             this.metroButton5.TabIndex = 22;
@@ -496,7 +490,7 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(51, 690);
+            this.metroButton3.Location = new System.Drawing.Point(51, 709);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(80, 23);
             this.metroButton3.TabIndex = 23;
@@ -504,11 +498,69 @@
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click_1);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.dateTimePicker2);
+            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.metroButton1);
+            this.groupBox3.Location = new System.Drawing.Point(265, 241);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(177, 181);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Arquivo";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(21, 38);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(132, 20);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(21, 91);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(132, 20);
+            this.dateTimePicker2.TabIndex = 1;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(21, 133);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(134, 23);
+            this.metroButton1.TabIndex = 2;
+            this.metroButton1.Text = "Tratar exeções";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(73, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "De";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(73, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Até";
+            // 
             // TratarDados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 722);
+            this.ClientSize = new System.Drawing.Size(465, 739);
+            this.Controls.Add(this.lb_aguarde);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.tb_dia);
@@ -539,6 +591,8 @@
             this.title_mes.PerformLayout();
             this.title_ano.ResumeLayout(false);
             this.title_ano.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,7 +605,6 @@
         private MetroFramework.Controls.MetroTextBox tb_caminho;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroButton btn_voltar;
         private MetroFramework.Controls.MetroCheckBox chekd_diretorio;
@@ -578,5 +631,11 @@
         private System.Windows.Forms.ProgressBar pgb_coleta;
         private System.Windows.Forms.Label lb_carregando;
         private System.Windows.Forms.Label lb_aguarde;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
